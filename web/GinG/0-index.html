@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="Shortcut Icon" type="image/x-icon" href="pic/favicon.ico" />
+    <title>金雞堂蔘藥房</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        
+//        
+//        $(window).ready(function() {
+//            $("#loading-wrapper").show();
+//        });
+//
+//        $(window).onload(function() {
+//            $("#loading-wrapper").hide();
+//        });
+//
+//        window.onload=function(){
+//            document.getElementById("loading-wrapper").style.opacity=1;
+//        }
+//        
+//        
+//        window.onload=function(){
+//            document.getElementById("loading-wrapper").style.opacity=0;
+//        }
+
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                document.getElementById("top-button").style.opacity = 1;
+            } else {
+                document.getElementById("top-button").style.opacity = 0;
+            }
+
+
+            /*關於我們*/
+
+            if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+                document.getElementById("content-aboutus-intro-p").style.animationplaystate = "running";
+                document.getElementById("content-aboutus-intro-p").style.WebkitAnimationPlayState = "running";
+
+                document.getElementById("content-aboutus-pic1").style.animationplaystate = "running";
+                document.getElementById("content-aboutus-pic1").style.WebkitAnimationPlayState = "running";
+
+                document.getElementById("content-aboutus-pic2").style.animationplaystate = "running";
+                document.getElementById("content-aboutus-pic2").style.WebkitAnimationPlayState = "running";
+
+                document.getElementById("content-aboutus-bottom").style.animationplaystate = "running";
+                document.getElementById("content-aboutus-bottom").style.WebkitAnimationPlayState = "running";
+            }
+
+
+            /*常見藥材*/
+
+            if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+                document.getElementById("content-herbs-intro-bottom").style.animationplaystate = "running";
+                document.getElementById("content-herbs-intro-bottom").style.WebkitAnimationPlayState = "running";
+
+                document.getElementById("content-herbs-intro-p").style.animationplaystate = "running";
+                document.getElementById("content-herbs-intro-p").style.WebkitAnimationPlayState = "running";
+
+                document.getElementById("content-herbs-pic1").style.animationplaystate = "running";
+                document.getElementById("content-herbs-pic1").style.WebkitAnimationPlayState = "running";
+            }
+
+
+            /*養生藥膳*/
+
+            if (document.body.scrollTop > 1400 || document.documentElement.scrollTop > 1400) {
+                document.getElementById("content-cuisine-pic").style.animationplaystate = "running";
+                document.getElementById("content-cuisine-pic").style.WebkitAnimationPlayState = "running";
+
+                document.getElementById("content-cuisine-p").style.animationplaystate = "running";
+                document.getElementById("content-cuisine-p").style.WebkitAnimationPlayState = "running";
+
+                document.getElementById("content-cuisine-intro-bottom").style.animationplaystate = "running";
+                document.getElementById("content-cuisine-intro-bottom").style.WebkitAnimationPlayState = "running";
+            }
+
+        }
+
+    </script>
+    <style>
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            max-width: 100%;
+            font-family: "游ゴシック", "微軟正黑體";
+        }
+
+
+        p1 {
+            color: #313131;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        p3 {
+            color: #e38e1d;
+            font-size: 20px;
+            font-weight: 500;
+            font-family: "Microsoft Yi Baiti";
+            padding-left: 10px;
+            word-spacing: -3px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #313131;
+        }
+
+/*
+
+
+        .loading-wrapper {
+            background-color: white;
+            width: 100%;
+            height: 650px;
+            position: absolute;
+            z-index: 10;
+            opacity: 0;
+        }
+
+        .loading {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translateY(-50%) translateX(-50%);
+            -moz-transform: translateY(-50%) translateX(-50%);
+            -o-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .loading .binding {
+            content: '';
+            width: 27px;
+            height: 4px;
+            border: 2px solid #E15958;
+            margin: 0 auto;
+        }
+
+        .loading .pad {
+            width: 15px;
+            height: 18px;
+            border: 2px solid #E15958;
+            border-top: 0;
+            padding: 6px;
+            margin: 0 auto;
+        }
+
+        .loading .line {
+            width: 15px;
+            margin-top: 4px;
+            border-top: 2px solid #E15958;
+            opacity: 0;
+            -webkit-animation: writeline 3s infinite ease-in;
+            -moz-animation: writeline 3s infinite ease-in;
+            -o-animation: writeline 3s infinite ease-in;
+            animation: writeline 3s infinite ease-in;
+        }
+
+        .loading .line:first-child {
+            margin-top: 0;
+        }
+
+        .loading .line.line1 {
+            -webkit-animation-delay: 0s;
+            -moz-animation-delay: 0s;
+            -o-animation-delay: 0s;
+            animation-delay: 0s;
+        }
+
+        .loading .line.line2 {
+            -webkit-animation-delay: 0.5s;
+            -moz-animation-delay: 0.5s;
+            -o-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+        }
+
+        .loading .line.line3 {
+            -webkit-animation-delay: 1s;
+            -moz-animation-delay: 1s;
+            -o-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+
+        .loading .text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #E15958;
+        }
+*/
+
+        @-webkit-keyframes writeline {
+            0% {
+                width: 0px;
+                opacity: 0;
+            }
+            33% {
+                width: 15px;
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes writeline {
+            0% {
+                width: 0px;
+                opacity: 0;
+            }
+            33% {
+                width: 15px;
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-o-keyframes writeline {
+            0% {
+                width: 0px;
+                opacity: 0;
+            }
+            33% {
+                width: 15px;
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes writeline {
+            0% {
+                width: 0px;
+                opacity: 0;
+            }
+            33% {
+                width: 15px;
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+
+
+
+
+
+        .wrapper {
+            width: 100%;
+        }
+
+        #top-button {
+            transition: opacity .6s;
+            opacity: 0;
+        }
+
+        .top-button a {
+            position: fixed;
+            right: 40px;
+            bottom: 40px;
+            z-index: 4;
+            color: #313131;
+            font-size: 20px;
+            transition: color .3s;
+        }
+
+        .top-button a:hover {
+            color: #c7c7c7;
+        }
+
+
+        /*banner*/
+
+        .banner {
+            margin: auto;
+            width: 100%;
+            height: 160px;
+            position: relative;
+        }
+
+        #nav {
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        #nav ul {
+            margin-top: 0;
+            padding-left: 0px;
+            list-style-type: none;
+            font-weight: 500;
+            font-size: 16.5px;
+            position: relative;
+            text-align: center;
+        }
+
+        #nav li {
+            margin: auto;
+            line-height: 180px;
+            margin-left: 60px;
+            margin-right: 60px;
+            display: inline-block;
+        }
+
+        #nav li a {
+            color: #313131;
+            text-decoration: none;
+            transition: color .3s;
+        }
+
+        #nav li a:hover {
+            color: #c7c7c7;
+        }
+
+        #banner-logo {
+            vertical-align: middle;
+        }
+
+
+        /*header*/
+
+        .header {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+
+
+        /*左側方塊動畫*/
+
+        @keyframes Block1Out {
+            0% {
+                width: 0px;
+                left: 0px;
+            }
+            45% {
+                width: 120%;
+                left: 0px;
+            }
+            90% {
+                width: 0%;
+                left: 120%;
+                opacity: 1;
+            }
+            100% {
+                width: 0%;
+                left: 120%;
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes Block1Out {
+            0% {
+                width: 0px;
+                left: 0px;
+            }
+            45% {
+                width: 120%;
+                left: 0px;
+            }
+            90% {
+                width: 0%;
+                left: 120%;
+                opacity: 1;
+            }
+            100% {
+                width: 0%;
+                left: 120%;
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes Block1Out {
+            0% {
+                width: 0px;
+                left: 0px;
+            }
+            45% {
+                width: 120%;
+                left: 0px;
+            }
+            90% {
+                width: 0%;
+                left: 120%;
+                opacity: 1;
+            }
+            100% {
+                width: 0%;
+                left: 120%;
+                opacity: 0;
+            }
+        }
+
+        #block1wrapper {
+            width: 80%;
+            height: 400px;
+            margin-top: 50px;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        #block1 {
+            height: 400px;
+            margin-left: -60px;
+            position: absolute;
+            z-index: 3;
+            background: #F6DCBA;
+            animation: Block1Out 1900ms;
+            /*IE*/
+            -moz-animation: Block1Out 1900ms;
+            /*FireFox*/
+            -webkit-animation: Block1Out 1900ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            transform: skewX(-17deg);
+            animation-delay: 300ms;
+        }
+
+
+
+        /*右側方塊動畫*/
+
+        @keyframes Block2Out {
+            0% {
+                width: 0px;
+            }
+            100% {
+                width: 120%;
+            }
+        }
+
+        @-moz-keyframes Block2Out {
+            0% {
+                width: 0px;
+            }
+            100% {
+                width: 120%;
+            }
+        }
+
+        @-webkit-keyframes Block2Out {
+            0% {
+                width: 0px;
+            }
+            100% {
+                width: 120%;
+            }
+        }
+
+        #block2wrapper {
+            width: 90%;
+            height: 400px;
+            margin-left: 10%;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        #block2 {
+            height: 400px;
+            position: absolute;
+            z-index: 1;
+            margin-left: -63px;
+            background: antiquewhite;
+            animation: Block2Out 1300ms;
+            /*IE*/
+            -moz-animation: Block2Out 1300ms;
+            /*FireFox*/
+            -webkit-animation: Block2Out 1300ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            transform: skewX(-17deg);
+        }
+
+
+
+        /*右側底色動畫*/
+
+        .header-block {
+            height: 400px;
+            width: 90%;
+            background-color: antiquewhite;
+            margin-top: 0px;
+            margin-left: 10%;
+            position: absolute;
+            z-index: 0;
+            animation: blockopacity 1600ms;
+            /*IE*/
+            -moz-animation: blockopacity 1600ms;
+            /*FireFox*/
+            -webkit-animation: blockopacity 1600ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-delay: 1400ms;
+        }
+
+
+        /*左側圖片動畫*/
+
+        @keyframes blockopacity {
+            0% {
+                opacity: 0;
+            }
+            90% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes blockopacity {
+            0% {
+                opacity: 0;
+            }
+            90% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes blockopacity {
+            0% {
+                opacity: 0;
+            }
+            90% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .header-pic {
+            width: 80%;
+            height: 400px;
+            margin-top: 50px;
+            position: absolute;
+            z-index: 2;
+            background-image: url(pic/header-pic.JPG);
+            background-position: 50% 65%;
+            background-size: 100%;
+            animation: blockopacity 1000ms;
+            /*IE*/
+            -moz-animation: blockopacity 1000ms;
+            /*FireFox*/
+            -webkit-animation: blockopacity 1000ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-delay: 250ms;
+        }
+
+
+
+        @keyframes opacit {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes opacit {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes opacit {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .header-title {
+            color: white;
+            font-size: 30px;
+            position: absolute;
+            z-index: 4;
+            margin-top: 160px;
+            padding-left: 72.8%;
+            line-height: 42px;
+            animation: opacit 2200ms;
+            /*IE*/
+            -moz-animation: opacit 2200ms;
+            /*FireFox*/
+            -webkit-animation: opacit 2200ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-delay: 2000ms;
+        }
+
+        .header-title span {
+            padding-left: 0px;
+            color: #313131;
+            font-size: 28px;
+            word-spacing: -3px;
+        }
+
+
+
+        /*關於我們*/
+
+        .content-aboutus {
+            margin-top: 90px;
+            margin-left: 8%;
+        }
+
+        .content-aboutus-title {}
+
+        .content-aboutus-intro-bottom {
+            position: absolute;
+            width: 36%;
+            height: 400px;
+            z-index: 3;
+        }
+
+        .content-aboutus-intro {
+            position: relative;
+            margin-top: 47px;
+            background-color: aliceblue;
+        }
+
+        .content-aboutus-intro p {
+            float: left;
+            line-height: 33px;
+        }
+
+        .content-aboutus-bottom {
+            margin-left: 0px;
+            margin-top: 40px;
+            float: left;
+            width: 200px;
+            height: 45px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #e38e1d;
+            text-align: center;
+            line-height: 45px;
+            font-size: 14px;
+            vertical-align: top;
+        }
+
+        .content-aboutus-bottom i {
+            color: #e38e1d;
+            font-size: 18px;
+            line-height: 45px;
+            vertical-align: top;
+        }
+
+        .content-aboutus-intro-bottom a {
+            text-decoration: none;
+            color: #313131;
+            transition: color .3s;
+        }
+
+        .content-aboutus-intro-bottom a:hover {
+            color: #c7c7c7;
+        }
+
+        .content-aboutus-pic {
+            position: absolute;
+            z-index: 1;
+            margin-top: 55.5px;
+            height: 300px;
+            width: 84%;
+        }
+
+        .content-aboutus-pic1 {
+            float: right;
+            margin-right: 0px;
+        }
+
+        .content-aboutus-pic2 {
+            float: right;
+            margin-right: 0px;
+        }
+
+        #content-aboutus-intro-p {
+            animation: opacit 2100ms;
+            /*IE*/
+            -moz-animation: opacit 2100ms;
+            /*FireFox*/
+            -webkit-animation: opacit 2100ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+        #content-aboutus-pic1 {
+            animation: opacit 2100ms;
+            /*IE*/
+            -moz-animation: opacit 2100ms;
+            /*FireFox*/
+            -webkit-animation: opacit 2100ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+        #content-aboutus-pic2 {
+            animation: opacit 2100ms;
+            /*IE*/
+            -moz-animation: opacit 2100ms;
+            /*FireFox*/
+            -webkit-animation: opacit 2100ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+        #content-aboutus-bottom {
+            animation: opacit 1600ms;
+            /*IE*/
+            -moz-animation: opacit 1600ms;
+            /*FireFox*/
+            -webkit-animation: opacit 1600ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-play-state: paused;
+            animation-delay: 500ms;
+        }
+
+
+
+        /*常見藥材*/
+
+        .content-herbs-wrapper {
+            margin-top: 440px;
+            background-color: antiquewhite;
+            height: 500px;
+        }
+
+        .content-herbs {
+            width: 84%;
+            margin-left: 8%;
+        }
+
+        .content-herbs-pic {
+            z-index: 1;
+            margin-top: 55.5px;
+            height: 300px;
+            float: left;
+        }
+
+        .content-herbs-pic1 {
+            float: left;
+            margin-left: 0px;
+        }
+
+        .content-herbs-right {
+            margin-top: 93px;
+            z-index: 3;
+            width: 43%;
+            float: right;
+        }
+
+        .content-herbs-title {}
+
+        .content-herbs-intro-bottom {
+            position: absolute;
+            width: 36%;
+            height: 400px;
+            z-index: 3;
+        }
+
+        .content-herbs-intro {
+            position: relative;
+            margin-top: 47px;
+            background-color: aliceblue;
+        }
+
+        .content-herbs-intro p {
+            float: left;
+            line-height: 33px;
+        }
+
+        .content-herbs-intro-bottom a {
+            text-decoration: none;
+            color: #313131;
+            transition: color .3s;
+        }
+
+        .content-herbs-intro-bottom a:hover {
+            color: #c7c7c7;
+        }
+
+        .content-herbs-bottom {
+            margin-left: 0px;
+            margin-top: 40px;
+            float: left;
+            width: 200px;
+            height: 45px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #e38e1d;
+            text-align: center;
+            line-height: 45px;
+            font-size: 14px;
+            vertical-align: top;
+        }
+
+        .content-herbs-bottom i {
+            color: #e38e1d;
+            font-size: 18px;
+            line-height: 45px;
+            vertical-align: top;
+        }
+
+        #content-herbs-intro-p {
+            animation: opacit 2100ms;
+            /*IE*/
+            -moz-animation: opacit 2100ms;
+            /*FireFox*/
+            -webkit-animation: opacit 2100ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+        #content-herbs-intro-bottom {
+            animation: opacit 1600ms;
+            /*IE*/
+            -moz-animation: opacit 1600ms;
+            /*FireFox*/
+            -webkit-animation: opacit 1600ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-play-state: paused;
+            animation-delay: 500ms;
+        }
+
+        #content-herbs-pic1 {
+            animation: opacit 2100ms;
+            /*IE*/
+            -moz-animation: opacit 2100ms;
+            /*FireFox*/
+            -webkit-animation: opacit 2100ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+
+
+        /*養生藥膳*/
+
+        .content-cuisine {
+            margin-top: 90px;
+            margin-left: 8%;
+            height: 430px;
+        }
+
+        .content-cuisine-intro-bottom {
+            position: absolute;
+            width: 36%;
+            height: 400px;
+            z-index: 3;
+            margin-top: 38px;
+        }
+
+        .content-cuisine-pic {
+            position: absolute;
+            z-index: 1;
+            height: 300px;
+            width: 84%;
+        }
+
+        .content-cuisine-intro-bottom a {
+            text-decoration: none;
+            color: #313131;
+            transition: color .3s;
+        }
+
+        .content-cuisine-intro-bottom a:hover {
+            color: #c7c7c7;
+        }
+
+
+        #content-cuisine-p {
+            animation: opacit 2100ms;
+            /*IE*/
+            -moz-animation: opacit 2100ms;
+            /*FireFox*/
+            -webkit-animation: opacit 2100ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+        #content-cuisine-pic {
+            animation: opacit 2100ms;
+            /*IE*/
+            -moz-animation: opacit 2100ms;
+            /*FireFox*/
+            -webkit-animation: opacit 2100ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+        #content-cuisine-intro-bottom {
+            animation: opacit 1600ms;
+            /*IE*/
+            -moz-animation: opacit 1600ms;
+            /*FireFox*/
+            -webkit-animation: opacit 1600ms;
+            /*Chrome, Safari*/
+            animation-fill-mode: both;
+            animation-play-state: paused;
+            animation-delay: 500ms;
+        }
+
+
+        /*footer*/
+
+        .footer {
+            width: 84%;
+            margin-top: 50px;
+            margin-left: 8%;
+            height: 180px;
+            border-top-style: solid;
+            border-top-color: #f1efeb;
+            border-top-width: 1px;
+        }
+
+        .footer-logo {
+            width: 200px;
+            height: 180px;
+            float: left;
+            position: absolute;
+            margin-top: 20px;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 10px;
+            color: #313131;
+            width: 100%;
+            margin-top: 150px;
+            margin-bottom: 0px;
+        }
+
+        .footer-information-pic {
+            vertical-align: sub;
+            padding-right: 5px;
+
+        }
+
+        .footer-information {
+            float: right;
+            padding-right: 30px;
+            font-size: 25px;
+            margin-top: 20px;
+            vertical-align: middle;
+            line-height: 35px;
+        }
+
+    </style>
+</head>
+
+<body>
+<!--
+   
+    <div id="#loading-wrapper" class="loading-wrapper">
+        <div id="loading" class="loading">
+            <div class="binding"></div>
+            <div class="pad">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
+            <div class="text">
+                Ching-Chi is loading...
+            </div>
+        </div>
+    </div>
+-->
+
+    <div id="top" class="wrapper">
+        <!--back to top-->
+        <div id="top-button" class="top-button">
+            <a href="#"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+        </div>
+
+
+        <!--nav-->
+        <div class="banner">
+            <div id="nav">
+                <ul>
+                    <li><a href="1-aboutus.html">關於我們</a></li>
+                    <li><a href="2-herbs.html">常見藥材</a></li>
+                    <li>
+                        <a href="0-index.html"><img id="banner-logo" src="pic/logo.png" height=110px></a>
+                    </li>
+                    <li><a href="3-cuisine.html">養生藥膳</a></li>
+                    <li><a href="4-contact.html">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!--heeader-->
+        <div class="header">
+            <div id="block1wrapper">
+                <div id="block1"></div>
+            </div>
+            <div id="block2wrapper">
+                <div id="block2"></div>
+            </div>
+            <div class="header-block"></div>
+            <div class="header-pic"></div>
+            <div class="header-title">您好，<br>健康今<span>日販售中，</span><br>請問要<span>來幾份？</span></div>
+
+        </div>
+
+
+        <!--關於我們-->
+        <div class="content-aboutus">
+            <div class="content-aboutus-title">
+                <p1>關於我們
+                    <hr color="#e38e1d" size="1px" width="35px" align="left">
+                </p1>
+            </div>
+            <div class="content-aboutus-intro-bottom">
+                <div class="content-aboutus-intro">
+                    <p id="content-aboutus-intro-p">金雞堂蔘藥房自民國七十七年創立，秉持著以誠為本的經營態度，認為中藥雖然是傳統的治療方法，但仍有其珍貴之處，對現代人來說，日常生活的食補比醫療重要，金雞堂蔘藥房想推行的就是這種觀念。</p>
+                </div>
+                <a id="content-aboutus-bottom" class="content-aboutus-bottom" href="1-aboutus.html"><i class="fa fa-angle-right" aria-hidden="true"> </i> 看更多創辦故事</a>
+            </div>
+            <div class="content-aboutus-pic">
+                <figure id="content-aboutus-pic1" class="content-aboutus-pic1">
+                    <img src="pic/content-aboutus-pic1.jpg" height=230px>
+                </figure>
+                <figure id="content-aboutus-pic2" class="content-aboutus-pic2">
+                    <img src="pic/content-aboutus-pic2.jpg" height=230px>
+                </figure>
+            </div>
+        </div>
+
+
+        <!--常見藥材-->
+        <div class="content-herbs-wrapper">
+            <div class="content-herbs">
+                <div class="content-herbs-pic">
+                    <figure id="content-herbs-pic1" class="content-herbs-pic1">
+                        <img src="pic/content-herbs-pic1.jpg" height=380px>
+                    </figure>
+                </div>
+                <div class="content-herbs-right">
+                    <div class="content-herbs-title">
+                        <p1>常見藥材
+                            <hr color="#e38e1d" size="1px" width="35px" align="left">
+                        </p1>
+                    </div>
+                    <div class="content-herbs-intro-bottom">
+                        <div id="content-herbs-intro-p" class="content-herbs-intro">
+                            <p>中藥看似傳統而遙遠，其實在生活中已經有許多容易接觸到的中藥材，如果更了解這些常見藥材，便能減少許多誤用的情況，也能在遇到身體狀況時，利用這些容易取得的中藥搭配正確的觀念使用。</p>
+                        </div>
+                        <a id="content-herbs-intro-bottom" class="content-herbs-bottom" href="2-herbs.html"><i class="fa fa-angle-right" aria-hidden="true"> </i> 看更多常見藥材</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--養生藥膳-->
+        <div class="content-cuisine">
+            <div class="content-cuisine-intro-bottom">
+                <div class="content-aboutus-title">
+                    <p1>養生藥膳
+                        <hr color="#e38e1d" size="1px" width="35px" align="left">
+                    </p1>
+                </div>
+                <div id="content-cuisine-p" class="content-aboutus-intro">
+                    <p>藥材與食材其實只有一線之隔，生活中常見的食材常常也是藥材的一種，利用食物本身的特性搭配些許藥材，對身體的恢復有很大的作用，這正是食補的觀念。也能在平時運用這些藥材做成料理，做成一道道好吃又健康的養生藥膳。</p>
+                </div>
+                <a id="content-cuisine-intro-bottom" class="content-aboutus-bottom" href="3-cuisine.html"><i class="fa fa-angle-right" aria-hidden="true"> </i> 看更多養生藥膳</a>
+            </div>
+            <div id="content-cuisine-pic" class="content-cuisine-pic">
+                <figure class="content-aboutus-pic1">
+                    <img src="pic/content-cuisine-pic1.jpg" height=380px>
+                </figure>
+            </div>
+        </div>
+
+
+        <!--footer-->
+        <div class="footer">
+            <div class="footer-logo">
+                <a href="0-index.html"><img src="pic/logo.png" height=100px></a>
+            </div>
+            <div class="footer-information">
+                <p><img class="footer-information-pic" src="pic/footer-tel.png" height=18px;>(03)9333288<br>
+                    <img class="footer-information-pic" src="pic/footer-address.png" height=18px;>宜蘭市舊城北路127號</p>
+            </div>
+            <p class="footer-copyright">© 2017 ching-chi.</p>
+        </div>
+    </div>
+
+    <script>
+        $('#top-button').click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+        });
+
+
+        $(window).load(function() {
+            $('#loading-wrapper').hide;
+        });
+
+    </script>
+</body>
+
+</html>

@@ -3,30 +3,33 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Document</title>
+		<title>Chia_Kuo</title>
+		<link rel="shortcut icon" type="image/png" href="pic/favicon.ico"/>
 		<link rel="stylesheet" href="reset.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<!--
-<script>
-$(document).scroll(function () {
-var st = $(this).scrollTop();
-$("#header").css({
-"background-position-y": (-st/5)
-})
-$("#headerc").css({
-"top": (-st*3)
-})
-if(st > "700px"){
-$('#nav').css({
-"opacity": .8;
-})
-}
-});
-
-</script>
--->
-
 		<script>
+//打字效果
+var count=0;
+var content="<span>&lt;title&gt;</span>Chia_Kuo<span>&lt;/title&gt;</span>";
+function type_write(){
+	if(count<=content.length){
+		document.getElementById('banner-title').innerHTML=content.substring(0,count);
+		count++;
+		setTimeout("type_write()",40);
+	}
+}
+
+var count2=0;
+var content2="<span>&lt;p&gt;</span><br>&nbsp;&nbsp; I love the moment,<br>&nbsp;&nbsp; when I am coding.<br><span>&lt;/p&gt;</span>";
+function type_write2(){
+	if(count2<=content2.length){
+		document.getElementById('banner-text').innerHTML=content2.substring(0,count2);
+		count2++;
+		setTimeout("type_write2()",40);
+	}
+}
+
+//nav出現
 $(window).scroll(function(){
 	if($(window).scrollTop()>550){
 		$("#nav").css("opacity",1);
@@ -34,9 +37,18 @@ $(window).scroll(function(){
 		$("#nav").css("opacity",0);
 	}
 
+
+	//	nav 每個位置不同
 	if($(window).scrollTop()>550 && $(window).scrollTop()<1200){
 		$("#nav-about").removeClass("nav-hover");
 		$("#nav-about").addClass("nav-hover-hover");
+		$("ul.skill-block-ul").children(".active").each(function(i) {
+			var row = $(this);
+			setTimeout(function() {
+				row.css("opacity","0.8");
+			},100*i);
+		});
+
 	}else{
 		$("#nav-about").removeClass("nav-hover-hover");
 		$("#nav-about").addClass("nav-hover");
@@ -65,9 +77,30 @@ $(window).scroll(function(){
 		$("#nav-contact").removeClass("nav-hover-hover");
 		$("#nav-contact").addClass("nav-hover");
 	}
+
+	if($(window).scrollTop()>1100){
+		$("#exp-item1").css("opacity",1);
+	}
+	if($(window).scrollTop()>1260){
+		$("#exp-item2").css("opacity",1);
+	}
+	if($(window).scrollTop()>1476){
+		$("#exp-item3").css("opacity",1);
+	}
+	if($(window).scrollTop()>1564){
+		$("#exp-item4").css("opacity",1);
+	}
+	if($(window).scrollTop()>1702){
+		$("#exp-item5").css("opacity",1);
+	}
+	if($(window).scrollTop()>1840){
+		$("#exp-item6").css("opacity",1);
+	}
 })
 		</script>
+		<script>
 
+		</script>
 
 
 		<style>
@@ -102,8 +135,8 @@ $(window).scroll(function(){
 				opacity: 0.25;
 				vertical-align: middle;
 				margin-right: 5px;
-				margin-top: 5px;
-				margin-bottom: 5px;
+				margin-top: 7px;
+				margin-bottom: 7px;
 				transition: 0.2s;
 
 			}
@@ -127,14 +160,7 @@ $(window).scroll(function(){
 				transition: 0.2s;
 				color: #e4e2e2;
 			}
-			/*
-			.nav li:hover img{
-			opacity: .8;
-			}
-			.nav li:hover span{
-			opacity: 1;
-			}
-			*/
+
 			.nav-hover img{
 				opacity:0.25;
 			}
@@ -150,14 +176,6 @@ $(window).scroll(function(){
 			.nav-hover-hover span{
 				opacity:0.8;
 			}
-			/*
-			.nav-hover span{
-			opacity:0;
-			}
-			.nav-hover:hover{
-			opacity: 0.8;
-			}
-			*/
 			.banner {
 				height: 700px;
 				width: 100%;
@@ -188,6 +206,31 @@ $(window).scroll(function(){
 				margin-top: 64px;
 				margin-left: 45px;
 			}
+			#banner-title::after,#banner-text::after{ 
+				content: "|";
+				margin-left: 5px;
+				display: inline-block;
+				opacity: 1;
+				-webkit-animation: blink 1s infinite;
+				-moz-animation: blink 1s infinite;
+				animation: blink 1s infinite; 
+			}
+			@-webkit-keyframes blink {
+				0% { opacity: 1; } 
+				50% { opacity: 0; } 
+				100% { opacity: 1; } 
+			} 
+			@-moz-keyframes blink {
+				0% { opacity: 1; } 
+				50% { opacity: 0; } 
+				100% { opacity: 1; }
+			} 
+			@keyframes blink { 
+				0% { opacity: 1; } 
+				50% { opacity: 0; } 
+				100% { opacity: 1; } 
+			}		
+
 			.banner-text-down{
 				padding-top: 60px;
 				line-height: 60px;
@@ -197,6 +240,7 @@ $(window).scroll(function(){
 			}
 			h2 {
 				font-size: 26px;
+
 			}
 			span{
 				color: #33ced8;
@@ -273,15 +317,28 @@ $(window).scroll(function(){
 				border-radius: 100%;
 				top: 90px;
 				margin-bottom: 90px;
-				transition: .2s;
+				transition: .3s;
 			}
 			.icon-img{
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%,-50%);
+				z-index: 5;
+				transition: .3s;
+			}
+			.icon-img-hover{
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				z-index: 4;
+				position: absolute;
+
 			}
 			.exp-icon .icon-bg:hover{
 				background-color: #e4e2e2;
+			}
+			.exp-icon .icon-bg:hover .icon-img{
+				opacity: 0;
 			}
 			h4{
 				color: #f2d852;
@@ -303,6 +360,8 @@ $(window).scroll(function(){
 			}
 			.exp-item{
 				margin-bottom: 188px;
+				opacity: 0;
+				transition: 1s;
 			}
 			.port{
 				width: 80%;
@@ -416,14 +475,14 @@ $(window).scroll(function(){
 		</style>
 	</head>
 
-	<body>
-		<div class="full" id="full">
+	<body onload="type_write(),type_write2()">
+		<div class="full" id="full" >
 
 			<div class="banner" >
 				<div class="banner-block" id="home">
 					<div class="banner-text">
-						<h2><span>&lt;title&gt;</span>Chia_Kuo<span>&lt;/title&gt;</span></h2>
-						<h2 class="banner-text-down"><span>&lt;p&gt;</span><br>&nbsp;&nbsp; I love the moment,<br>&nbsp;&nbsp; when I am coding.<br>
+						<h2 id="banner-title"><span>&lt;title&gt;</span>Chia_Kuo<span>&lt;/title&gt;</span></h2>
+						<h2 class="banner-text-down" id="banner-text"><span>&lt;p&gt;</span><br>&nbsp;&nbsp; I love the moment,<br>&nbsp;&nbsp; when I am coding.<br>
 							<span>&lt;/p&gt;</span></h2>
 					</div>
 				</div>
@@ -461,11 +520,11 @@ $(window).scroll(function(){
 									<td>HTML</td>
 									<td>
 										<ul class="skill-block-ul">
-											<li class="skill-block"></li
-												><li class="skill-block"></li
-											><li class="skill-block"></li
-											><li class="skill-block"></li
-											><li class="skill-block"></li
+											<li class="skill-block active"></li
+												><li class="skill-block active"></li
+											><li class="skill-block active"></li
+											><li class="skill-block active"></li
+											><li class="skill-block active"></li
 											><li class="skill-block"></li>
 										</ul>
 									</td>
@@ -473,8 +532,8 @@ $(window).scroll(function(){
 									<td>Bootstrap</td>
 									<td>
 										<ul class="skill-block-ul">
-											<li class="skill-block"></li
-												><li class="skill-block"></li
+											<li class="skill-block active"></li
+												><li class="skill-block active"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li
@@ -486,11 +545,11 @@ $(window).scroll(function(){
 									<td>Jade / Pug</td>
 									<td>
 										<ul class="skill-block-ul">
-											<li class="skill-block"></li
-												><li class="skill-block"></li
-											><li class="skill-block"></li
-											><li class="skill-block"></li
-											><li class="skill-block"></li
+											<li class="skill-block active"></li
+												><li class="skill-block active"></li
+											><li class="skill-block active"></li
+											><li class="skill-block active"></li
+											><li class="skill-block "></li
 											><li class="skill-block"></li>
 										</ul>
 									</td>
@@ -498,9 +557,9 @@ $(window).scroll(function(){
 									<td>C</td>
 									<td>
 										<ul class="skill-block-ul">
-											<li class="skill-block"></li
-												><li class="skill-block"></li
-											><li class="skill-block"></li
+											<li class="skill-block active"></li
+												><li class="skill-block active"></li
+											><li class="skill-block active"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li>
@@ -511,11 +570,11 @@ $(window).scroll(function(){
 									<td>CSS / Sass</td>
 									<td>
 										<ul class="skill-block-ul">
-											<li class="skill-block"></li
-												><li class="skill-block"></li
-											><li class="skill-block"></li
-											><li class="skill-block"></li
-											><li class="skill-block"></li
+											<li class="skill-block active"></li
+												><li class="skill-block active"></li
+											><li class="skill-block active"></li
+											><li class="skill-block active"></li
+											><li class="skill-block active"></li
 											><li class="skill-block"></li>
 										</ul>
 									</td>
@@ -523,9 +582,9 @@ $(window).scroll(function(){
 									<td>Visual Basic</td>
 									<td>
 										<ul class="skill-block-ul">
-											<li class="skill-block"></li
-												><li class="skill-block"></li
-											><li class="skill-block"></li
+											<li class="skill-block active"></li
+												><li class="skill-block active"></li
+											><li class="skill-block active"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li>
@@ -536,8 +595,8 @@ $(window).scroll(function(){
 									<td>Javascript</td>
 									<td>
 										<ul class="skill-block-ul">
-											<li class="skill-block"></li
-												><li class="skill-block"></li
+											<li class="skill-block active"></li
+												><li class="skill-block active"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li
@@ -552,15 +611,27 @@ $(window).scroll(function(){
 				</div>
 				<div class="exp exp-line" id="experience">
 					<ul class="exp-icon">
-						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-edu.png" alt="" width="40px"></div></li>
-						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-people.png" alt="" width="40px"></div></li>
-						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-pc.png" alt="" width="40px"></div></li>
-						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-star.png" alt="" width="40px"></div></li>
-						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-star.png" alt="" width="40px"></div></li>
-						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-project.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg">
+							<img class="icon-img" src="pic/exp-icon/exp-edu.png" alt="" width="40px">
+							<img class="icon-img-hover" src="pic/exp-icon/exp-edu-hover.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg">
+							<img class="icon-img"src="pic/exp-icon/exp-people.png" alt="" width="40px">
+							<img class="icon-img-hover" src="pic/exp-icon/exp-people-hover.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg">
+							<img class="icon-img"src="pic/exp-icon/exp-pc.png" alt="" width="40px">
+							<img class="icon-img-hover" src="pic/exp-icon/exp-pc-hover.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg">
+							<img class="icon-img"src="pic/exp-icon/exp-star.png" alt="" width="40px">
+							<img class="icon-img-hover" src="pic/exp-icon/exp-star-hover.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg">
+							<img class="icon-img"src="pic/exp-icon/exp-star.png" alt="" width="40px">
+							<img class="icon-img-hover" src="pic/exp-icon/exp-star-hover.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg">
+							<img class="icon-img"src="pic/exp-icon/exp-project.png" alt="" width="40px">
+							<img class="icon-img-hover" src="pic/exp-icon/exp-project-hover.png" alt="" width="40px"></div></li>
 					</ul>
 					<div class="left-exp-content">
-						<div class="exp-item">
+						<div class="exp-item" id="exp-item1">
 							<h4>淡江企業管理學系</h4>
 							<p>
 								在企管系課程中學到許多行銷相關知識，<br>
@@ -568,7 +639,7 @@ $(window).scroll(function(){
 								並設想如何行銷產品進而售出。<br><br>
 							</p>
 						</div>
-						<div class="exp-item">
+						<div class="exp-item" id="exp-item3">
 							<h4>創意數位媒體教學實習中心</h4>
 							<p>
 								在網站組期間學習到網頁的建構方法，<br>
@@ -577,7 +648,7 @@ $(window).scroll(function(){
 								累積許多網頁版面設計、實作的作品。<br>
 							</p>
 						</div>
-						<div class="exp-item">
+						<div class="exp-item" id="exp-item5">
 							<h4>2017新人王網站設計大賽</h4>
 							<p>
 								與另一位同學共同擔任網站部分，<br>
@@ -588,7 +659,7 @@ $(window).scroll(function(){
 						</div>
 					</div>
 					<div class="left-exp-content right-exp-content">
-						<div class="exp-item">
+						<div class="exp-item" id="exp-item2">
 							<h4>企管系學會</h4>
 							<p>
 								協助美宣組製作宣傳文宣、海報等。<br>
@@ -596,7 +667,7 @@ $(window).scroll(function(){
 								也了解到團隊溝通的重要性。<br><br>
 							</p>
 						</div>
-						<div class="exp-item">
+						<div class="exp-item" id="exp-item4">
 							<h4>經濟部搶鮮大賽</h4>
 							<p>
 								搶鮮大賽是發想如何應用技術到生活中的企畫書競賽，<br>
@@ -604,7 +675,7 @@ $(window).scroll(function(){
 								好幾個夜晚跟同伴熬夜修改企畫書的經驗很讓人難忘。<br><br>
 							</p>
 						</div>
-						<div class="exp-item">
+						<div class="exp-item" id="exp-item6">
 							<h4>淡水老街再生計畫</h4>
 							<p>
 								與指導老師溝通後選擇Wix架設宣傳網站，<br>
@@ -617,7 +688,7 @@ $(window).scroll(function(){
 				<div class="port" id="portfolio">
 					<div class="left-port-content">
 						<div class="album">
-							<a href="">
+							<a href="https://pin.it/npeiup4c5tcgze" target="_blank">
 								<div class="album-img">
 									<img src="pic/port-img/port-ilan.png" alt="" width="450px">
 								</div>
@@ -639,7 +710,7 @@ $(window).scroll(function(){
 							</a>
 						</div>
 						<div class="album">
-							<a href="">
+							<a href="web/OnePage/chia.html"  target="_blank">
 								<div class="album-img">
 									<img src="pic/port-img/port-OnePage.jpg" alt="" width="450px">
 								</div>
@@ -662,7 +733,7 @@ $(window).scroll(function(){
 							</a>
 						</div>
 						<div class="album">
-							<a href="">
+							<a href="http://firehuman.idv.tw/" target="_blank">
 								<div class="album-img">
 									<img src="pic/port-img/port-firehuman.png" alt="" height="300px">
 								</div>
@@ -687,7 +758,7 @@ $(window).scroll(function(){
 					</div>
 					<div class="left-port-content right-port-content">
 						<div class="album">
-							<a href="">
+							<a href="https://pin.it/ghsisxac3bbxkp"  target="_blank">
 								<div class="album-img">
 									<img src="pic/port-img/port-LanYang.png" alt="" width="450px">
 								</div>
@@ -709,7 +780,7 @@ $(window).scroll(function(){
 							</a>
 						</div>
 						<div class="album">
-							<a href="">
+							<a href="web/GinG/0-index.html"  target="_blank">
 								<div class="album-img">
 									<img src="pic/port-img/port-GinG.png" alt="" width="450px">
 								</div>
@@ -732,7 +803,7 @@ $(window).scroll(function(){
 							</a>
 						</div>
 						<div class="album">
-							<a href="">
+							<a href="web/WebTeam/index.html"  target="_blank">
 								<div class="album-img">
 									<img src="pic/port-img/port-WebTeam.png" alt="" height="300px">
 								</div>
@@ -761,7 +832,7 @@ $(window).scroll(function(){
 					<div class="contact-bg">
 						<div class="contact-content">
 							<div class="contact-text">
-								<h2><span>&lt;h3&gt;</span><br>
+								<h2 id="contact-text"><span>&lt;h3&gt;</span><br>
 									&nbsp;&nbsp;&nbsp;&nbsp;我是郭佳惠，<br>
 									&nbsp;&nbsp;&nbsp;&nbsp;一個熱愛程式的女孩。<br>
 									<span>&lt;/h3&gt;</span>
@@ -778,8 +849,7 @@ $(window).scroll(function(){
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript">
-
+		<script>
 		</script>
 	</body>
 

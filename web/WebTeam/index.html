@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>互動行銷網站設計組</title>
+        <link rel="stylesheet" href="reset.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                // 預設標題區塊 .abgne_tip_gallery_block .caption 的 top
+                var _titleHeight = 220;
+                $('.pic-wrap').each(function() {
+                    // 先取得區塊的高及標題區塊等資料
+                    var $this = $(this), 
+                        _height = $this.height(), 
+                        $caption = $('.black', $this),
+                        _captionHeight = $caption.outerHeight(true),
+                        _speed = 400;
+                    // 當滑鼠移動到區塊上時
+                    $this.hover(function() {
+                        // 讓 $caption 往上移動
+                        $caption.stop().animate({
+                            top: _height - _captionHeight
+                        }, _speed);
+                    }, function() {
+                        // 讓 $caption 移回原位
+                        $caption.stop().animate({
+                            top: _height - _titleHeight
+                        }, _speed);
+                    });
+                });
+            });
+        </script>
+        <style>
+            body {
+                font-family: '微軟正黑體';
+                color: black;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            img{
+                height: 100%;
+            }
+
+            .wrap {
+                width: 100%;
+                height: 100%;
+            }
+
+            .title-top{
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top:6%;
+                font-weight: 600;
+                font-size: 18px;
+
+            }
+
+            .title-left{
+                position: absolute;
+                transform: translate(0, -50%);
+                transform: rotate(-90deg);
+                top: 49%;
+            }
+
+
+            .title-right{
+                position: absolute;
+                transform: translate(-50%, -50%);                
+                transform: rotate(90deg);
+                left: 94%;
+                top: 48%;
+            }
+
+            .title-bottom{
+                height: 40px;
+                position: absolute;
+                transform: translate(-50%, 0);
+                left: 50%;
+                top: 91%;
+            }
+
+            .content {
+                width: 1100px;
+                height: 460px;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top: 50%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .pic-wrap {
+                width: 360px;
+                height: 220px;
+                overflow: hidden;
+            }
+
+            #pic1-wrap {
+                background-image: url(img/1-01.png);
+                background-position: 50% 30%;
+                background-size: 126%;
+            }
+            #pic2-wrap {
+                background-image: url(img/2-01.png);
+                background-position: 49% 30%;
+                background-size: 126%;
+            }
+            #pic3-wrap {
+                background-image: url(img/3-01.png);
+                background-position: 50% 50%;
+                background-size: 126%;
+            }
+            #pic4-wrap {
+                background-image: url(img/4-01.png);
+                background-position: 50% 35%;
+                background-size: 126%;
+            }
+            #pic5-wrap {
+                background-image: url(img/5-01.png);
+                background-position: 50% 30%;
+                background-size: 126%;
+            }
+            #pic6-wrap {
+                background-image: url(img/6-01.png);
+                background-position: 50% 40%;
+                background-size: 126%;
+            }
+
+            .black {
+                width: 360px;
+                height: 220px;
+                margin-top: 170px;
+                position: relative;
+                background: -webkit-linear-gradient(rgba(118, 118, 119, 0.8), rgba(118, 118, 119, 0.9));
+                background: -o-linear-gradient(rgba(118, 118, 119, 0.8), rgba(118, 118, 119, 0.9));
+                background: -moz-linear-gradient(rgba(118, 118, 119, 0.8), rgba(118, 118, 119, 0.9));
+                background: linear-gradient(rgba(118, 118, 119, 0.8), rgba(118, 118, 119, 0.9));
+                text-align: center;
+            }
+
+
+            h2 {
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 50px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: lighter;
+                line-height: 22px;
+                padding-left: 36px;
+                padding-right: 36px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrap">
+            <div class="title-top">互動行銷網站設計組</div>
+            <div class="title-left">ABOUT US</div>
+            <div class="title-bottom"><img src="img/LOGO.png"></div>
+            <div class="title-right">Website</div>
+            <div class="content">
+                <a href="">
+                    <div id="pic1-wrap" class="pic-wrap">
+                        <div class="pic"></div>
+                        <div id="pic1-black" class="black">
+                            <h2>夏季日記summerdaily</h2>
+                            <p>透過自己參與海洋相關活動為主軸，記錄下我與海相遇的足跡，以照片、影片、手札的形式呈現，內容涵蓋了景點介紹分享、個人相關資訊，還有景點地圖，希望透過這格網站讓大家一起加入愛海的行列，跟宜芬一起擁抱大海 :)</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div id="pic2-wrap" class="pic-wrap">
+                        <div class="pic"></div>
+                        <div id="pic2-black" class="black">
+                            <h2>金雞堂蔘藥房</h2>
+                            <p>為家裡的藥房架構一個網站，希望藉由比較活潑的網站風格，改變大家對藥房舊有的印象，內容也採用比較常接觸到的藥材，可以藉由網站認識到不同的藥材藥膳。</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div id="pic3-wrap" class="pic-wrap">
+                        <div class="pic"></div>
+                        <div id="pic3-black" class="black">
+                            <h2>欸！等一下要吃什麼</h2>
+                            <p>希望透過地圖的方式介紹淡江周邊美食，希望能解決大學生總是在想下一餐要吃什麼的煩惱，還有提供隨機挑選店家，終於不用再花時間思考等一下吃什麼了!!!</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div id="pic4-wrap" class="pic-wrap">
+                        <div class="pic"></div>
+                        <div id="pic4-black" class="black">
+                            <h2>SU'S WORLD</h2>
+                            <p>期盼透過網站，讓大家認識我和我的作品們，因此融入大量個人色彩，建造出個人小天地，並且經由小動畫做出古靈精怪的感覺，更添個人風采。</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div id="pic5-wrap" class="pic-wrap">
+                        <div class="pic"></div>
+                        <div id="pic5-black" class="black">
+                            <h2>Yuting</h2>
+                            <p>我的網站結合兩種取向「個人作品集」和「彩妝分享」，整體風格是我很喜歡的粉嫩色系，還有搭配童趣的英文字體，就像我平時給人的感覺一樣。</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div id="pic6-wrap" class="pic-wrap">
+                        <div class="pic"></div>
+                        <div id="pic6-black" class="black">
+                            <h2>OUR OCEAN</h2>
+                            <p>這是一個關於海洋的網頁，我想在這個網頁上讓人們看到美麗的海洋，也同時看到遭受污染的海洋，而我也自己親自去淨灘，把這些淨灘過程的照片一起放到網頁上，呼籲大家一起讓海洋回到原本的樣貌。</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

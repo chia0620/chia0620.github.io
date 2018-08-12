@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chia Kuo</title>
+    <link rel="stylesheet" href="lightbox.css" type="text/css" />
+    <script type="text/javascript" src="lightbox.js"></script>
+    <style>
+        body,
+        p,
+        h1,
+        h2 {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        
+        body {
+            width: 100%;
+            height:auto;
+            margin: auto;
+        }
+        
+        .img {
+            border: 0;
+            vertical-align: top;
+            align-self: center;
+        }
+        
+        .clearfix {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        .text-main-color {
+            color: #222222;
+        }
+        
+        .text-minor-color {
+            color: #fafafa;
+        }
+        
+        .full {
+            margin: auto;
+            vertical-align: middle;
+        }
+        
+        .home {
+            height: 600px;
+            background-image: url(1.png);
+            background-position: 50% -190px;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        
+        .slider {
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+        }
+        
+        .title {
+            align-self: center;
+            vertical-align: center;
+            position: absolute;
+            padding-left: 7%;
+            width: 800px;
+            margin: auto;
+        }
+        
+        #nav ul {
+            padding: 0;
+            padding-top: 42px;
+            margin: 0;
+            float: right;
+        }
+        
+        #nav li {
+            list-style-type: none;
+            float: left;
+            font-size: 14px;
+        }
+        
+        #nav a {
+            color: #222222;
+            font-family: 微軟正黑體;
+            padding-left: 32px;
+            transition: color .2s;
+            text-decoration: none;
+        }
+        
+        #nav a:hover {
+            color: #fafafa;
+            text-decoration: none;
+        }
+        
+        .chia {
+            float: left;
+            margin-left: 20px;
+            margin-top: 330px;
+            font-family: sans-serif;
+        }
+        
+        .h1-1 {
+            text-align: left;
+            font-size: 42px;
+            word-spacing: 15px;
+            letter-spacing: 4px;
+            font-weight: 700;
+            font-family: 'Raleway', sans-serif;
+            font-size: bold;
+        }
+        
+        .h1-2 {
+            padding-top: 3px;
+            line-height: 28px;
+            font-size: 14px;
+        }
+        
+        .quote-block {
+            position: relative;
+            background-color: #1d1d1d;
+            vertical-align: center;
+            height: 100px;
+        }
+        
+        .quote {
+            font-family: 微軟正黑體;
+            text-align: center;
+            color: #e6e6e6;
+        }
+        
+        .h2-1 {
+            font-size: 12px;
+            word-spacing: 2px;
+            letter-spacing: 1px;
+            font-weight: lighter;
+            padding-top: 23px;
+        }
+        
+        .h2-2 {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 50px;
+            margin-top: 10px;
+        }
+        
+        .photo {
+            background-color: white;
+            height: 570px;
+        }
+        
+        .portfolio {
+            background-color: #e6e6e6;
+            height: 740px;
+            margin:auto;
+        }
+        
+        .photo-border {
+            width: 760px;
+            margin:auto;
+        }
+        
+        .category {
+            height: 140px;
+        }
+        
+        .h3-1 {
+            margin-left: 0px;
+            font-family: 微軟正黑體;
+            font-size: 14px;
+            padding-top: 50px;
+            text-align: left;
+        }
+        
+        .hr {
+            border: none;
+            height: 2px;
+            width: 120px;
+            margin-left: 0px;
+            margin-top: 10px;
+            background-color: #222222;
+        }
+        
+        .pic {
+            float: left;
+            z-index: 0;
+            position: absolute;
+        }
+        
+        .pics {
+            margin-top: 20px;
+            vertical-align: middle;
+            margin-left: 0px;
+            width: 760px;
+            height: 337.8px;
+        }
+        
+        .big-1 {
+            margin-left: 0px;
+            padding: 0;
+            float: left;
+        }
+        
+        .black-big {
+            float: left;
+            width: 190px;
+            height: 337.8px;
+            opacity: 0;
+            z-index: 3;
+        }
+        
+        .black-big:hover {
+            float: left;
+            background: linear-gradient(#4b4b4b, black);
+            width: 190px;
+            height: 337.8px;
+            opacity: 0.5;
+            z-index: 3;
+            transition: 0.4s;
+        }
+        
+        .black-small-up {
+            float: top;
+            width: 160;
+            height: 160px;
+            opacity: 0;
+            z-index: 3;
+            margin-top: 0px;
+        }
+        
+        .black-small-up:hover {
+            float: top;
+            background: linear-gradient(#4b4b4b, black);
+            width: 160px;
+            height: 160px;
+            opacity: 0.5;
+            z-index: 3;
+            transition: 0.4s;
+            margin-top: 0px;
+        }
+        
+        .black-small-down {
+            float: top;
+            width: 160;
+            height: 160px;
+            opacity: 0;
+            z-index: 3;
+            margin-top: 17.7px;
+        }
+        
+        .black-small-down:hover {
+            float: top;
+            background: linear-gradient(#4b4b4b, black);
+            width: 160px;
+            height: 160px;
+            opacity: 0.5;
+            z-index: 3;
+            margin-top: 17.7px;
+            transition: 0.4s;
+        }
+        
+        .smalls-1 {
+            margin-left: 14px;
+            padding: 0;
+            float: left;
+            width: 160px;
+        }
+        
+        .smalls-2 {
+            margin-left: 14px;
+            padding: 0;
+            float: left;
+            width: 160px;
+        }
+        
+        .small-up {
+            z-index: 0;
+            margin-top: 0px;
+            float: top;
+        }
+        
+        .small-down {
+            z-index: 0;
+            margin-top: 17.7px;
+            float: top;
+        }
+        
+        .big-2 {
+            margin-left: 14px;
+            padding: 0;
+            float: left;
+        }
+        
+        .about {
+            margin:auto;
+            width:1000px;
+            height: 500px;
+            background-color: white;
+        }
+        
+        .about-border {
+            width: 76%;
+            margin-left: 12%;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .introduce {
+            float: left;
+            margin-left: 100px;
+        }
+        
+        .about-pic {
+            float: left;
+        }
+        
+        .about-content {
+            margin-right: auto;
+            font-family: 微軟正黑體;
+            display: inline-block;
+        }
+        
+        .about-information {
+            width: 260px;
+        }
+        
+        .informations {
+            float: left;
+            background-color: #e6e6e6;
+            width: 230px;
+            height: 51.5px;
+            line-height: 51.5px;
+            vertical-align: middle;
+            text-align: left;
+            padding-left: 30px;
+            word-spacing: 50px;
+        }
+        
+        .informations:hover {
+            background-color: rgb(177, 177, 177);
+        }
+        
+        .contact {
+            position: relative;
+            background-color: #e6e6e6;
+            height: 320px;
+        }
+        
+        .contact-border {
+            width: 760px;
+            margin:auto;
+            padding: 0;
+            vertical-align: middle;
+        }
+        
+        .block1 {
+            width: 230px;
+            height: 70px;
+            float: left;
+            border-style: solid;
+            border-color: #b5b5b5;
+            border-width: 2px;
+        }
+        
+        .block1:hover {
+            border-style: solid;
+            border-color: #222222;
+            transition: .2s;
+        }
+        
+        .word1 {
+            margin: auto;
+            margin-top: 28px;
+            font-size: 16px;
+            text-align: center;
+            font-family: 微軟正黑體;
+            color: #222222;
+        }
+        
+        .block2 {
+            width: 230px;
+            height: 70px;
+            float: left;
+            margin-left: 30px;
+            border-style: solid;
+            border-color: #b5b5b5;
+            border-width: 2px;
+        }
+        
+        .block2:hover {
+            border-style: solid;
+            border-color: #222222;
+            transition: .2s;
+        }
+        
+        .block {
+            width: 800px;
+            padding-top: 25px;
+        }
+        
+        .footer {
+            background-color: #222222;
+            height: 110px;
+            text-align: center;
+        }
+        
+        .connect {
+            display: inline-block;
+            padding-top: 50px;
+            margin: auto;
+            word-spacing: 8px;
+        }
+        
+        .social {
+            float: left;
+        }
+        
+        .black-ppt {
+            float: left;
+            width: 370px;
+            height: 246.66px;
+            opacity: 0;
+            z-index: 3;
+            margin-top: 0px;
+        }
+        
+        .black-ppt:hover {
+            float: left;
+            background: linear-gradient(#4b4b4b, black);
+            width: 370px;
+            height: 246.66px;
+            opacity: 0.5;
+            z-index: 3;
+            transition: 0.4s;
+            margin-top: 0px;
+        }
+        
+        .black-ppt-2 {
+            float: left;
+            width: 370px;
+            height: 277.5px;
+            opacity: 0;
+            z-index: 3;
+            margin-top: 0px;
+        }
+        
+        .black-ppt-2:hover {
+            float: left;
+            background: linear-gradient(#4b4b4b, black);
+            width: 370px;
+            height: 277.5px;
+            opacity: 0.5;
+            z-index: 3;
+            transition: 0.4s;
+            margin-top: 0px;
+        }
+        
+        .ppt {
+            margin-left: 0px;
+            padding: 0;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="full">
+        <div class="home">
+            <div class="slider">
+                <div class="title clearfix">
+                    <div id="nav">
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#photo">Photo</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="chia">
+                        <div class="h1-1 text-main-color">
+                            Chia Kuo
+                        </div>
+                        <div class="h1-2 text-main-color">
+                            Walking on the way to pursue myself<br> And keep proceed.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quote-block">
+            <div class="quote">
+                <div class="h2-1">"And now, I am just trying to change the world, one sequin at a time."</div>
+                <div class="h2-2">- Lady Gaga -</div>
+
+            </div>
+        </div>
+        <div class="about" id="about">
+            <div class="about-border">
+                <div class="category">
+                    <div class="h3-1 text-main-color">
+                        About
+                    </div>
+                    <hr class="hr">
+                </div>
+                <div class="about-content">
+                    <div class="about-pic">
+                        <img href="12.jpg" src="12.jpg" alt="" height=260px>
+                    </div>
+                    <div class="introduce">
+                        <div class="about-information">
+                            <div class="informations html"> <img style="vertical-align:-10%" src="11.png" alt=""> Html/css</div>
+                            <div class="informations" style="margin-top:18px"><img style="vertical-align:-10%" src="11.png" alt=""> PowerPoint</div>
+                            <div class="informations" style="margin-top:18px"><img style="vertical-align:-10%" src="11.png" alt=""> Photoshop</div>
+                            <div class="informations" style="margin-top:18px"><img style="vertical-align:-10%" src="11.png" alt=""> codeing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio" id="portfolio">
+            <div class="photo-border">
+                <div class="category">
+                    <div class="h3-1 text-main-color">
+                        Protfolio
+                    </div>
+                    <hr class="hr">
+                </div>
+                <div>
+                    <div>
+                        <div class="ppt">
+                            <img class="pic" src="16.png" width=370px alt="">
+                            <a href="16.png" rel="lightbox"><div class="black-ppt"></div></a>
+                        </div>
+                        <div style="margin-left:10px" class="ppt">
+                            <img class="pic" src="15.png" width=370px alt="">
+                            <a href="15.png" rel="lightbox"><div class="black-ppt"></div></a>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="margin-top:10px" class="ppt">
+                            <img class="pic" src="17.png" width=370px alt="">
+                            <a href="17.png" rel="lightbox"><div class="black-ppt-2"></div></a>
+                        </div>
+                        <div style="margin-left:10px;margin-top:10px" class="ppt">
+                            <img class="pic" src="18.png" width=370px alt="">
+                            <a href="18.png" rel="lightbox"><div class="black-ppt-2"></div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photo" id="photo">
+            <div class="photo-border">
+                <div class="category">
+                    <div class="h3-1 text-main-color">
+                        Photo
+                    </div>
+                    <hr class="hr">
+                </div>
+                <div class="pics clearfix">
+                    <div class="big-1">
+                        <img class="pic" src="3.jpg" width=190px alt="">
+                        <a href="3.jpg" rel="lightbox"><div class="black-big"></div></a>
+                    </div>
+                    <div class="smalls-1 ">
+                        <img class="small-up pic" src="4.jpg" width=160px alt="">
+                        <a href="4.jpg" rel="lightbox"><div class="black-small-up"></div></a>
+                        <img class="small-down pic" src="6.jpg" width=160px alt="">
+                        <a href="6.jpg" rel="lightbox"><div class="black-small-down"></div></a>
+                    </div>
+                    <div class="smalls-2">
+                        <img class="small-up pic" src="5.jpg" width=160px alt="">
+                        <a href="5.jpg" rel="lightbox"><div class="black-small-up"></div></a>
+                        <img class="small-down pic" src="7.jpg" width=160px alt="">
+                            <a href="7.jpg" rel="lightbox"><div class="black-small-down"></div></a>
+                    </div>
+                    <div class="big-2">
+                        <img class="pic" src="8.jpg" width=190px alt="">
+                        <a href="8.jpg" rel="lightbox"><div class="black-big"></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="contact" id="contact">
+            <div class="contact-border">
+                <div class="category">
+                    <div class="h3-1 text-main-color">
+                        Contact
+                    </div>
+                    <hr class="hr">
+                </div>
+                <div class="block clearfix">
+                    <div class="block1">
+                        <div class="word1">Email me</div>
+                    </div>
+                    <div class="block2">
+                        <div class="word1">Call me</div>
+                    </div>
+                    <div class="block2">
+                        <div class="word1">Text me</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="connect">
+                <div class="social" style="margin-right:20px">
+                    <a href="https://www.facebook.com/chiahui.kuo.58"><img src="f-fb.png" width=25px></a>
+                </div>
+                <div class="social">
+                    <a href="https://www.instagram.com/rita10rita/"><img src="f-ig.png" width=25px></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

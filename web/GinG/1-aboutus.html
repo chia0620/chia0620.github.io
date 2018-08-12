@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="Shortcut Icon" type="image/x-icon" href="pic/favicon.ico" />
+        <title>金雞堂蔘藥房</title>
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+
+            window.onscroll = function() {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    document.getElementById("top-button").style.opacity = 1;
+                } else {
+                    document.getElementById("top-button").style.opacity = 0;
+                }
+            }
+
+        </script>
+        <style>
+
+            .clearfix:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                width: 100%;
+                font-family: "游ゴシック", "微軟正黑體";
+            }
+
+            p1 {
+                color: #313131;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            p3 {
+                color: #e38e1d;
+                font-size: 20px;
+                font-weight: 500;
+                font-family: "Microsoft Yi Baiti";
+                padding-left: 10px;
+                word-spacing: -3px;
+            }
+
+            p {
+                font-size: 16px;
+                color: #313131;
+            }
+
+            .wrapper {
+                width: 100%;
+            }
+
+            #top-button {
+                transition: opacity .6s;
+                opacity: 0;
+            }
+
+            .top-button a {
+                position: fixed;
+                right: 40px;
+                bottom: 40px;
+                z-index: 4;
+                color: #313131;
+                font-size: 20px;
+                transition: color .3s;
+            }
+
+            .top-button a:hover {
+                color: #c7c7c7;
+            }
+
+
+            /*banner*/
+
+            .banner {
+                margin: auto;
+                width: 100%;
+                height: 180px;
+                position: relative;
+            }
+
+            #nav {
+                width: 90%;
+                margin-left: 5%;
+            }
+
+            #nav ul {
+                margin-top: 0;
+                padding-left: 0px;
+                list-style-type: none;
+                font-weight: 500;
+                font-size: 16.5px;
+                position: relative;
+                text-align: center;
+            }
+
+            #nav li {
+                margin: auto;
+                line-height: 180px;
+                margin-left: 60px;
+                margin-right: 60px;
+                display: inline-block;
+            }
+
+            #nav li a {
+                color: #313131;
+                text-decoration: none;
+                transition: color .3s;
+            }
+
+            #nav li a:hover {
+                color: #c7c7c7;
+            }
+
+            #banner-logo {
+                vertical-align: middle;
+            }
+
+
+
+
+            /*header*/
+
+            .header {
+                position: relative;
+                width: 100%;
+                height: 450px;
+            }
+
+            /*左側方塊動畫*/
+            @keyframes Block1Out{
+                0%   {
+                    width:0px;
+                    left:0px;
+                }
+                45%  {
+                    width:120%;
+                    left:0px;
+                }
+                90% {
+                    width:0%;
+                    left:120%;
+                    opacity: 1;
+                }
+                100%{
+                    width:0%;
+                    left:120%;
+                    opacity:0;
+                }
+            }
+            @-moz-keyframes Block1Out{
+                0%   {
+                    width:0px;
+                    left:0px;
+                }
+                45%  {
+                    width:120%;
+                    left:0px;
+                }
+                90% {
+                    width:0%;
+                    left:120%;
+                    opacity: 1;
+                }
+                100%{
+                    width:0%;
+                    left:120%;
+                    opacity:0;
+                }
+            }
+            @-webkit-keyframes Block1Out{
+                0%   {
+                    width:0px;
+                    left:0px;
+                }
+                45%  {
+                    width:120%;
+                    left:0px;
+                }
+                90% {
+                    width:0%;
+                    left:120%;
+                    opacity: 1;
+                }
+                100%{
+                    width:0%;
+                    left:120%;
+                    opacity:0;
+                }
+            }
+            #block1wrapper{
+                width: 80%;
+                height: 310px;
+                margin-top: 80px;
+                position: absolute;
+                overflow:hidden;
+            }
+            #block1{
+                height: 310px;
+                margin-left:-60px;
+                position: absolute;
+                z-index: 3;
+                background:#F6DCBA;
+                animation:Block1Out 2200ms ; /*IE*/
+                -moz-animation:Block1Out 2200ms ; /*FireFox*/
+                -webkit-animation:Block1Out 2200ms ; /*Chrome, Safari*/
+                animation-fill-mode: both;
+                transform: skewX(-17deg);
+                animation-delay: 300ms;
+            }
+
+
+
+            /*右側方塊動畫*/
+            @keyframes Block2Out{
+                0%   {
+                    width:0px;
+                }
+                100%{
+                    width:120%;
+                }
+            }
+            @-moz-keyframes Block2Out{
+                0%   {
+                    width:0px;
+                }
+                100%{
+                    width:120%;
+                }
+            }
+            @-webkit-keyframes Block2Out{
+                0%   {
+                    width:0px;
+                }
+                100%{
+                    width:120%;
+                }
+            }
+            #block2wrapper{
+                width: 90%;
+                height: 310px;
+                margin-left: 10%;
+                position: absolute;
+                overflow:hidden;
+            }
+            #block2{
+                height: 310px;
+                position: absolute;
+                z-index: 1;
+                margin-left: -63px;
+                background:antiquewhite;
+                animation:Block2Out 1400ms ; /*IE*/
+                -moz-animation:Block2Out 1400ms ; /*FireFox*/
+                -webkit-animation:Block2Out 1400ms ; /*Chrome, Safari*/
+                animation-fill-mode: both;
+                transform: skewX(-17deg);
+            }
+
+
+            /*右側底色動畫*/
+            .header-block {
+                height: 310px;
+                width: 90%;
+                background-color: antiquewhite;
+                margin-top: 0px;
+                margin-left: 10%;
+                position: absolute;
+                z-index: 0;
+                animation:blockopacity 1600ms ; /*IE*/
+                -moz-animation:blockopacity 1600ms ; /*FireFox*/
+                -webkit-animation:blockopacity 1600ms ; /*Chrome, Safari*/
+                animation-fill-mode: both;
+                animation-delay: 1400ms;
+            }
+
+
+            /*左側圖片動畫*/
+            @keyframes blockopacity{
+                0%   {
+                    opacity:0;
+                }
+                90%   {
+                    opacity:0;
+                }
+                100%{
+                    opacity:1;
+                }
+            }
+            @-moz-keyframes blockopacity{
+                0%   {
+                    opacity:0;
+                }
+                90%   {
+                    opacity:0;
+                }
+                100%{
+                    opacity:1;
+                }
+            }
+            @-webkit-keyframes blockopacity{
+                0%   {
+                    opacity:0;
+                }
+                90%   {
+                    opacity:0;
+                }
+                100%{
+                    opacity:1;
+                }
+            }
+            .header-pic {
+                width: 80%;
+                height: 310px;
+                margin-top: 80px;
+                position: absolute;
+                z-index: 2;
+                background-image: url(pic/aboutus-pic2.jpg);
+                background-position: 50% 5%;
+                background-size: 100%;
+                animation:blockopacity 1000ms ; /*IE*/
+                -moz-animation:blockopacity 1000ms ; /*FireFox*/
+                -webkit-animation:blockopacity 1000ms ; /*Chrome, Safari*/
+                animation-fill-mode: both;
+                animation-delay: 450ms;
+            }
+
+            @keyframes opacit{
+                0%   {
+                    opacity:0;
+                }
+                100%{
+                    opacity:1;
+                }
+            }
+            @-moz-keyframes opacit{
+                0%   {
+                    opacity:0;
+                }
+                100%{
+                    opacity:1;
+                }
+            }
+            @-webkit-keyframes opacit{
+                0%   {
+                    opacity:0;
+                }
+                100%{
+                    opacity:1;
+                }
+            }
+
+
+            .header-title {
+                color: #313131;
+                font-size: 32px;
+                position: absolute;
+                z-index: 4;
+                margin-top: 160px;
+                margin-left: 80.5%;
+                padding-left: 0px;
+                line-height: 28px;
+                animation:opacit 2200ms ; /*IE*/
+                -moz-animation:opacit 2200ms ; /*FireFox*/
+                -webkit-animation:opacit 2200ms ; /*Chrome, Safari*/
+                animation-fill-mode: both;
+                animation-delay: 1300ms;
+
+            }
+
+            .header-title span {
+                color: white;
+            }
+
+
+
+
+            /*content*/
+
+            .content{
+                width:70%;
+                margin-left: 15%;
+                padding-top: 0px;
+                margin-top: 0px;
+            }
+
+            .content p{
+                line-height:35px;
+                margin-bottom: 40px;
+            }
+
+
+            .pic{
+                width:48%;
+                margin-left: 4%;
+            }
+            /*footer*/
+
+            .footer {
+                width: 84%;
+                margin-top: 50px;
+                margin-left: 8%;
+                height: 180px;
+                border-top-style: solid;
+                border-top-color: #f1efeb;
+                border-top-width: 1px;
+            }
+
+            .footer-logo {
+                width: 200px;
+                height: 180px;
+                float: left;
+                position: absolute;
+                margin-top: 20px;
+            }
+
+            .footer-copyright {
+                text-align: center;
+                font-size: 10px;
+                color: #313131;
+                width: 100%;
+                margin-top: 150px;
+                margin-bottom: 0px;
+            }
+            .footer-information-pic{
+                vertical-align: sub;
+                padding-right: 5px;
+
+            }
+            .footer-information{
+                float: right;
+                padding-right: 30px;
+                font-size: 25px;
+                margin-top: 20px;
+                vertical-align: middle;
+                line-height: 35px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!--16歲去台北做學徒做3年 21去羅東工作9個月 當兵3年 基隆 2 個月 羅東2年 26歲當老闆 1988 9 17開店-->
+        <div id="top" class="wrapper">
+            <!--back to top-->
+            <div id="top-button" class="top-button">
+                <a href="#"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+            </div>
+
+
+            <!--nav-->
+            <div class="banner">
+                <div id="nav">
+                    <ul>
+                        <li><a href="1-aboutus.html">關於我們</a></li>
+                        <li><a href="2-herbs.html">常見藥材</a></li>
+                        <li>
+                            <a href="0-index.html"><img id="banner-logo" src="pic/logo.png" height=110px></a>
+                        </li>
+                        <li><a href="3-cuisine.html">養生藥膳</a></li>
+                        <li><a href="4-contact.html">聯絡我們</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--heeader-->
+            <div class="header">
+                <div id="block1wrapper"><div id="block1" ></div></div>
+                <div id="block2wrapper"><div id="block2" ></div></div>
+                <div class="header-block"></div>
+                <div class="header-pic"></div>
+                <div class="header-title">
+                    關於我們<br>
+                    <hr color="#e38e1d" size="1px" width="50px" align="left"><br>
+                </div>
+            </div>
+
+
+
+            <div class="content">
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;金雞堂蔘藥房自民國七十七年創立，至今已經將近三十年，到底是怎樣的秘訣能讓這間傳統的中藥房屹立不搖，金雞堂中藥房又是在怎樣的契機下創辦的，金雞堂蔘藥房的創辦故事：</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;民國六十七年，郭老闆抽中能到台北做學徒的機會，毅然決然背上行囊離開宜蘭到台北的中藥房做學徒。「那時候真的是很苦，學徒沒什麼錢，每天要第一個去開店，晚上要最後一個走，睡覺睡在地板上，還會有蟑螂從身邊爬過。」郭老闆回想起來仍然歷歷在目，雖然過程辛苦，但郭老闆沒有半途而廢，堅持當了3年學徒，學出一身功夫才離開台北。</p>
+
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;回到宜蘭後，到羅東工作了9個月，又接到國家的徵召，到外島當兵3年。24歲的他又陸續到基隆、羅東工作了兩年。在工作的幾年間，郭老闆一直思考著，自己真的要這樣一輩子嗎？「寧做小國之王，不做小國之臣」，一句簡單的俗諺，讓郭老闆下定決心要創業。創業並非易事，找店面、接洽中盤商、設計名片、管理店內，一切都由郭老闆自己包辦，經過一番努力，終於在民國77年9月17號，金雞堂蔘藥房創立。</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;郭老闆曾說，中藥是讓人改善身體狀況的，就像當醫生一樣，攸關人命，不能欺騙客人，也不能選用不好的藥材，「誠」是郭老闆秉持的經營理念，以真誠的態度對待客人，客人覺得好就會再來，不需要為了賺一些小錢而壞了自己的商譽。正是這樣的精神與堅持，才讓金雞堂蔘藥房屹立不搖經營將近三十年。未來，金雞堂蔘藥房將抱持真誠的經營態度，繼續提供優質的藥材。</p>
+                <img src="pic/header-pic.jpg" width=48% ><img class="pic"src="pic/content-aboutus-pic11.jpg" width=48%>
+            </div>
+
+
+
+
+            <!--footer-->
+            <div class="footer">
+                <div class="footer-logo">
+                    <a href="0-index.html"><img src="pic/logo.png" height=100px></a>
+                </div>
+                <div class="footer-information">
+                    <p><img class="footer-information-pic"src="pic/footer-tel.png" height=18px; >(03)9333288<br>
+                        <img class="footer-information-pic"src="pic/footer-address.png" height=18px;>宜蘭市舊城北路127號</p>
+                </div>
+                <p class="footer-copyright">© 2017 ching-chi.</p>
+            </div>
+
+        </div>
+        <script>
+            $('#top-button').click(function() {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+            });
+        </script>
+    </body>
+
+</html>
