@@ -1,10 +1,786 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>AGitHub</title>
-  </head>
-  <body>
-    <h1>安安</h1>
-  </body>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="reset.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!--
+<script>
+$(document).scroll(function () {
+var st = $(this).scrollTop();
+$("#header").css({
+"background-position-y": (-st/5)
+})
+$("#headerc").css({
+"top": (-st*3)
+})
+if(st > "700px"){
+$('#nav').css({
+"opacity": .8;
+})
+}
+});
+
+</script>
+-->
+
+		<script>
+$(window).scroll(function(){
+	if($(window).scrollTop()>550){
+		$("#nav").css("opacity",1);
+	}else{
+		$("#nav").css("opacity",0);
+	}
+
+	if($(window).scrollTop()>550 && $(window).scrollTop()<1200){
+		$("#nav-about").removeClass("nav-hover");
+		$("#nav-about").addClass("nav-hover-hover");
+	}else{
+		$("#nav-about").removeClass("nav-hover-hover");
+		$("#nav-about").addClass("nav-hover");
+	}
+
+	if($(window).scrollTop()>1200 && $(window).scrollTop()<2500){
+		$("#nav-experience").removeClass("nav-hover");
+		$("#nav-experience").addClass("nav-hover-hover");
+	}else{
+		$("#nav-experience").removeClass("nav-hover-hover");
+		$("#nav-experience").addClass("nav-hover");
+	}
+
+	if($(window).scrollTop()>2500 && $(window).scrollTop()<3750){
+		$("#nav-portfolio").removeClass("nav-hover");
+		$("#nav-portfolio").addClass("nav-hover-hover");
+	}else{
+		$("#nav-portfolio").removeClass("nav-hover-hover");
+		$("#nav-portfolio").addClass("nav-hover");
+	}
+
+	if($(window).scrollTop()>3750){
+		$("#nav-contact").removeClass("nav-hover");
+		$("#nav-contact").addClass("nav-hover-hover");
+	}else{
+		$("#nav-contact").removeClass("nav-hover-hover");
+		$("#nav-contact").addClass("nav-hover");
+	}
+})
+		</script>
+
+
+
+		<style>
+			/*
+			<span>&lt;title&gt;</span>
+			black
+			#1d252c
+			blue
+			#33ced8
+			white
+			#e4e2e2;
+			*/
+
+			@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+			* {
+				position: relative;
+				text-decoration: none;
+			}
+			a{
+				color: #e4e2e2;
+			}
+			html,
+			body,
+			.full {
+				width: 100%;
+				font-family: 'Source Code Pro', '微軟正黑體';
+				color: #e4e2e2;
+				background-color: #0a0c0f;
+			}
+			.nav img{
+				opacity: 0.25;
+				vertical-align: middle;
+				margin-right: 5px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+				transition: 0.2s;
+
+			}
+			.nav{
+				font-size: 12px;
+				position: fixed;
+				top: 50%;
+				left: 25px;
+				transform: translateY(-50%);
+				z-index: 99;
+			}
+			#nav{
+				opacity: 0;
+				transition: .3s;
+			}
+			.nav a{
+				color: #e4e2e2;
+			}
+			.nav span{
+				opacity: 0;
+				transition: 0.2s;
+				color: #e4e2e2;
+			}
+			/*
+			.nav li:hover img{
+			opacity: .8;
+			}
+			.nav li:hover span{
+			opacity: 1;
+			}
+			*/
+			.nav-hover img{
+				opacity:0.25;
+			}
+			.nav-hover span{
+				opacity:0;
+			}
+			.nav-hover:hover img, .nav-hover:hover span{
+				opacity: 0.8;
+			}
+			.nav-hover-hover img{
+				opacity:0.8;
+			}
+			.nav-hover-hover span{
+				opacity:0.8;
+			}
+			/*
+			.nav-hover span{
+			opacity:0;
+			}
+			.nav-hover:hover{
+			opacity: 0.8;
+			}
+			*/
+			.banner {
+				height: 700px;
+				width: 100%;
+				background-image: url(pic/banner-bg.png);
+				background-position: right;
+				position: fixed;
+				top: 0;
+				z-index: 1;
+			}
+			.fiction-box{
+				position: relative;
+				background-color: #0a0c0f;
+				top: 700px;
+				z-index: 2;
+				height: 3600px;
+			}
+			.banner-block {
+				width: 418px;
+				height: 445px;
+				opacity: 0.75;
+				border-radius: 10px;
+				background-color: #1d252c;
+				position: absolute;
+				top: 100px;
+				right: 8%;
+			}
+			.banner-text{
+				margin-top: 64px;
+				margin-left: 45px;
+			}
+			.banner-text-down{
+				padding-top: 60px;
+				line-height: 60px;
+			}
+			.banner-text-down span{
+				line-height: 32px;
+			}
+			h2 {
+				font-size: 26px;
+			}
+			span{
+				color: #33ced8;
+			}
+			h2 span{
+				font-size: 18px;
+			}
+			.about{
+				height: 660px;
+				width: 100%;
+			}
+			p{
+				font-size: 16px;
+				line-height: 24px;
+			}
+			p span{
+				font-size: 12px;
+			}
+			.about p{
+				left: 0;
+			}
+			.about img{
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			.about-content{
+				width: 800px;
+				height: 515px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.skill-block{
+				width: 10px;
+				height: 18px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 4px;
+				background-color: #e4e2e2;
+				opacity: .25;
+				border-radius: 1px;
+			}
+			.skill{
+				top: 71px;
+			}
+			.skill-block-ul{
+				text-align: right;
+			}
+			.skill-table{
+				font-size: 20px;
+				line-height: 13.5px;
+				color: #33ced8;
+			}
+			.exp{
+				height:1130px;
+				margin-top: 100px;
+				margin-bottom: 100px;
+				width: 100%;
+				overflow: hidden;
+			}
+			.exp-line{
+				background: #0a0c0f linear-gradient(0deg, #e4e2e2, #e4e2e2) 50% 50% no-repeat;
+				background-size: 1px 100%;
+			}
+			.exp-icon{
+				left: 50%;
+				transform: translateX(-35px);
+			}
+			.icon-bg{
+				width: 70px;
+				height: 70px;
+				background-color: #1d252c;
+				border-radius: 100%;
+				top: 90px;
+				margin-bottom: 90px;
+				transition: .2s;
+			}
+			.icon-img{
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.exp-icon .icon-bg:hover{
+				background-color: #e4e2e2;
+			}
+			h4{
+				color: #f2d852;
+				font-size: 20px;
+				font-weight: bold;
+				margin-bottom: 15px;
+			}
+			.left-exp-content{
+				width: 45%;
+				text-align: right;
+				line-height: 22px;
+				position: absolute;
+				top: 115px;
+			}
+			.right-exp-content{
+				text-align: left;
+				right: 0;
+				top: 273px;
+			}
+			.exp-item{
+				margin-bottom: 188px;
+			}
+			.port{
+				width: 80%;
+				position: absolute;
+				right: 8%;
+			}
+			.left-port-content{
+				position: absolute;
+				width: 450px;
+				left: 0;
+			}
+			.right-port-content{
+				right: 0;
+				left: auto;
+			}
+			.album{
+				text-align: center;
+				position: relative;
+				margin-top: 50px;
+				overflow: hidden;
+			}
+			.album:hover .album-black{
+				opacity: .9;
+				transition: .3s;
+			}
+			.album:hover .album-text{
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				transition: .4s;
+				transition-delay: .1s;
+			}
+			.album-img{
+				width: 450px;
+				height: 300px;
+				position: relative;
+				z-index: 3;
+				overflow: hidden;
+			}
+			.album-black{
+				width: 450px;
+				height: 300px;
+				position: absolute;
+				z-index: 4;
+				background-color: #1d252c;
+				opacity: 0;
+				top: -300px;
+				transition: all .5s ease-in-out;
+				transition-delay: .1s;
+			}
+			.album-text{
+				top: 100%;
+				left: 50%;
+				transform: translate(-50%,0);
+				transition: .4s;
+				transition-delay: 0s;
+			}
+			.album-title{
+				margin-bottom:  36px;
+			}
+			.album-word{
+				line-height: 30px;
+			}
+			.album-text span{
+				color: #d1548c;
+			}
+			.contact{
+				position: relative;
+				margin-top: 1300px;
+				width: 100%;
+			}
+			.contact-bg{
+				width: 80%;
+				height: 480px;
+				background-color: #1d252c;
+				position: absolute;
+				right: 8%;
+				border-radius: 10px;
+				margin-bottom: 50px;
+			}
+			.contact-content{
+				position: absolute;
+				width: 800px;
+				height: 374px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.contact-text{
+				line-height: 48px;
+			}
+			.contact-text p{
+				position: absolute;
+				top: 374px;
+				transform: translateY(-100%);
+
+			}
+			.contact-text p span{
+				font-family: '微軟正黑體';
+				vertical-align: top;
+				font-size: 18px;
+				color: #e4e2e2;
+				padding-left: 5px;
+				letter-spacing: 0.5px;
+			}
+			.contact-img{
+				position: absolute;
+				right: 0px;
+				top: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="full" id="full">
+
+			<div class="banner" >
+				<div class="banner-block" id="home">
+					<div class="banner-text">
+						<h2><span>&lt;title&gt;</span>Chia_Kuo<span>&lt;/title&gt;</span></h2>
+						<h2 class="banner-text-down"><span>&lt;p&gt;</span><br>&nbsp;&nbsp; I love the moment,<br>&nbsp;&nbsp; when I am coding.<br>
+							<span>&lt;/p&gt;</span></h2>
+					</div>
+				</div>
+			</div>
+			<div class="fiction-box">
+				<div class="nav" id="nav">
+					<ul>
+						<li><a href="#full" id="nav-home"><img  src="pic/nav-icon/nav-home.png" alt="" width="30px"><span >Home</span></a></li>
+						<li ><a href="#about" id="nav-about"><img  src="pic/nav-icon/nav-about.png" alt="" width="30px"><span>About</span></a></li>
+						<li><a href="#experience" id="nav-experience"><img src="pic/nav-icon/nav-experience.png" alt="" width="30px"><span>Experience</span></a></li>
+						<li><a href="#portfolio" id="nav-portfolio"><img  src="pic/nav-icon/nav-portfolio.png" alt="" width="30px"><span>Portfolio</span></a></li>
+						<li><a href="#contact"  id="nav-contact"><img src="pic/nav-icon/nav-contact.png" alt="" width="30px"><span>Contact</span></a></li>
+					</ul>
+				</div>
+				<div class="about" id="about">
+					<div class="about-content">
+						<p><span>&lt;p&gt;</span><br>
+							&nbsp;&nbsp;&nbsp;我是郭佳惠，<br>
+							&nbsp;&nbsp;&nbsp;我喜歡敲打程式碼的感覺，<br>
+							&nbsp;&nbsp;&nbsp;程式雖然複雜卻也直白，<br>
+							&nbsp;&nbsp;&nbsp;擁有絕對的正確與錯誤，<br>
+							&nbsp;&nbsp;&nbsp;這樣的絕對讓我安心。<br>
+							&nbsp;&nbsp;&nbsp;<br>
+							&nbsp;&nbsp;&nbsp;在大學期間接觸網頁前端，<br>
+							&nbsp;&nbsp;&nbsp;對網頁的領域總有無限的好奇心，<br>
+							&nbsp;&nbsp;&nbsp;也享受著刻出一個網站的成就感。<br>
+							&nbsp;&nbsp;&nbsp;正為了成為一名前端工程師努力著，<br>
+							&nbsp;&nbsp;&nbsp;致力於讓使用者擁有最好的體驗。<br>
+							<span>&lt;/p&gt;</span>
+						</p>
+						<img src="pic/me.png" alt="" width="280px">
+						<div class="skill">
+							<table class="skill-table" width="800px" height="148px">
+								<tr>
+									<td>HTML</td>
+									<td>
+										<ul class="skill-block-ul">
+											<li class="skill-block"></li
+												><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li>
+										</ul>
+									</td>
+									<td width="200px"></td>
+									<td>Bootstrap</td>
+									<td>
+										<ul class="skill-block-ul">
+											<li class="skill-block"></li
+												><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td>Jade / Pug</td>
+									<td>
+										<ul class="skill-block-ul">
+											<li class="skill-block"></li
+												><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li>
+										</ul>
+									</td>
+									<td width="200px"></td>
+									<td>C</td>
+									<td>
+										<ul class="skill-block-ul">
+											<li class="skill-block"></li
+												><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td>CSS / Sass</td>
+									<td>
+										<ul class="skill-block-ul">
+											<li class="skill-block"></li
+												><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li>
+										</ul>
+									</td>
+									<td width="200px"></td>
+									<td>Visual Basic</td>
+									<td>
+										<ul class="skill-block-ul">
+											<li class="skill-block"></li
+												><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td>Javascript</td>
+									<td>
+										<ul class="skill-block-ul">
+											<li class="skill-block"></li
+												><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li>
+										</ul>
+									</td>
+
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="exp exp-line" id="experience">
+					<ul class="exp-icon">
+						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-edu.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-people.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-pc.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-star.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-star.png" alt="" width="40px"></div></li>
+						<li><div class="icon-bg"><img class="icon-img"src="pic/exp-icon/exp-project.png" alt="" width="40px"></div></li>
+					</ul>
+					<div class="left-exp-content">
+						<div class="exp-item">
+							<h4>淡江企業管理學系</h4>
+							<p>
+								在企管系課程中學到許多行銷相關知識，<br>
+								在系上的報告實作中也曾設計產品，<br>
+								並設想如何行銷產品進而售出。<br><br>
+							</p>
+						</div>
+						<div class="exp-item">
+							<h4>創意數位媒體教學實習中心</h4>
+							<p>
+								在網站組期間學習到網頁的建構方法，<br>
+								從學習者到能夠擔任學姐的身分，<br>
+								更能把自己所學傳達出來。<br>
+								累積許多網頁版面設計、實作的作品。<br>
+							</p>
+						</div>
+						<div class="exp-item">
+							<h4>2017新人王網站設計大賽</h4>
+							<p>
+								與另一位同學共同擔任網站部分，<br>
+								第一次參與網站跟設計分開的專案，<br>
+								也是初次嘗試RWD式的設計，<br>
+								比賽過程中與同學溝通是很難得的經驗。<br>
+							</p>
+						</div>
+					</div>
+					<div class="left-exp-content right-exp-content">
+						<div class="exp-item">
+							<h4>企管系學會</h4>
+							<p>
+								協助美宣組製作宣傳文宣、海報等。<br>
+								除了作品的累積，<br>
+								也了解到團隊溝通的重要性。<br><br>
+							</p>
+						</div>
+						<div class="exp-item">
+							<h4>經濟部搶鮮大賽</h4>
+							<p>
+								搶鮮大賽是發想如何應用技術到生活中的企畫書競賽，<br>
+								比賽過程中學習到企劃書的撰寫的要點，<br>
+								好幾個夜晚跟同伴熬夜修改企畫書的經驗很讓人難忘。<br><br>
+							</p>
+						</div>
+						<div class="exp-item">
+							<h4>淡水老街再生計畫</h4>
+							<p>
+								與指導老師溝通後選擇Wix架設宣傳網站，<br>
+								從素材整理、版面設計、網站架設等<br>
+								皆為獨立完成，至今仍在維護更新中。<br><br>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="port" id="portfolio">
+					<div class="left-port-content">
+						<div class="album">
+							<a href="">
+								<div class="album-img">
+									<img src="pic/port-img/port-ilan.png" alt="" width="450px">
+								</div>
+								<div class="album-black">
+									<div class="album-text">
+										<p class="album-title">
+											<span>&lt;h4&gt;</span>
+											版型設計-宜蘭
+											<span>&lt;/h4&gt;</span>
+										</p>
+										<p class="album-word">
+											<span>&lt;!--</span>蘭陽平原保留許多農田，人跟土地都讓人感到舒服<br>
+											，因此動念為這樣的宜蘭設計一款網站，內容包含宜蘭<br>
+											的美食、景點與交通方式，顏色則是用米色與褐色這種<br>
+											接近土地的顏色，希望網站能表現宜蘭純樸的感覺。<span>--&gt;</span>
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="album">
+							<a href="">
+								<div class="album-img">
+									<img src="pic/port-img/port-OnePage.jpg" alt="" width="450px">
+								</div>
+								<div class="album-black">
+									<div class="album-text">
+										<p class="album-title">
+											<span>&lt;h4&gt;</span>
+											網頁-個人網站
+											<span>&lt;/h4&gt;</span>
+										</p>
+										<p class="album-word">
+											<span>&lt;!--</span>剛入門學習網站時，一直很希望有一個可以放上自己<br>
+											作品以及介紹的個人網站，因此當有能力架出one page<br>
+											時，便馬上選定要以自己為主題。我非常喜歡黑灰色系，<br>
+											黑色總讓我覺得有種內斂的美，因此網站也以灰色作為<br>
+											主色系去延伸。<span>--&gt;</span>
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="album">
+							<a href="">
+								<div class="album-img">
+									<img src="pic/port-img/port-firehuman.png" alt="" height="300px">
+								</div>
+								<div class="album-black">
+									<div class="album-text">
+										<p class="album-title">
+											<span>&lt;h4&gt;</span>
+											比賽網頁-我是消防員
+											<span>&lt;/h4&gt;</span>
+										</p>
+										<p class="album-word">
+											<span>&lt;!--</span>這個網頁我與另一個同學負責網站架設，這是第一次<br>
+											與夥伴分工去完成一個網站，不論是設計或是程式部分的<br>
+											溝通都讓我學到很多，這也是我第一次嘗試去做一個響應<br>
+											式網站，主題消防員是一個平常不會接觸到的職業，因此<br>
+											這次在蒐集素材的過程中也聽聞許多有趣的故事。<span>--&gt;</span>
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="left-port-content right-port-content">
+						<div class="album">
+							<a href="">
+								<div class="album-img">
+									<img src="pic/port-img/port-LanYang.png" alt="" width="450px">
+								</div>
+								<div class="album-black">
+									<div class="album-text">
+										<p class="album-title">
+											<span>&lt;h4&gt;</span>
+											版型設計-蘭陽女中
+											<span>&lt;/h4&gt;</span>
+										</p>
+										<p class="album-word">
+											<span>&lt;!--</span>剛學習網站時，跟高中老師分享了這個近況，老師便<br>
+											提出若有機會能幫忙把高中網站改版。便嘗試以高中母校<br>
+											網站的架構去設計，除了圓自己這個夢以外，也想嘗試資<br>
+											料量大時的版型設計，因此有了這個作品。<span>--&gt;</span>
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="album">
+							<a href="">
+								<div class="album-img">
+									<img src="pic/port-img/port-GinG.png" alt="" width="450px">
+								</div>
+								<div class="album-black">
+									<div class="album-text">
+										<p class="album-title">
+											<span>&lt;h4&gt;</span>
+											網頁-金雞堂蔘藥行
+											<span>&lt;/h4&gt;</span>
+										</p>
+										<p class="album-word">
+											<span>&lt;!--</span>主題金雞堂蔘藥行是家裡自己的中藥行，近幾年品牌<br>
+											經營一直是很熱門的議題，因此長輩曾向我提出想這樣經營<br>
+											藥房的念頭，為了跳脫藥房枯燥老舊的形象，網站以較亮眼<br>
+											的顏色跟特效讓中藥行不再無趣，有許多朋友在看到網頁後<br>
+											給出肯定的評價。<span>--&gt;</span>
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="album">
+							<a href="">
+								<div class="album-img">
+									<img src="pic/port-img/port-WebTeam.png" alt="" height="300px">
+								</div>
+								<div class="album-black">
+									<div class="album-text">
+										<p class="album-title">
+											<span>&lt;h4&gt;</span>
+											活動網頁-網站組
+											<span>&lt;/h4&gt;</span>
+										</p>
+										<p class="album-word">
+											<span>&lt;!--</span>媒體每年都會舉行成果展，讓學生可以展示自己所學，<br>
+											但因為大家的成果過於細碎，所以如何整合並展示便是個問<br>
+											題，我們想出的辦法是做一個網站組的首頁，讓觀展者可以<br>
+											透過簡單的介紹到自己有興趣的主題去看看，這也是設計跟<br>
+											架設分開的網站，內容用了簡單的文字框上滑特效。<span>--&gt;</span>
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+
+					</div>
+				</div>
+				<div class="contact" id="contact">
+					<div class="contact-bg">
+						<div class="contact-content">
+							<div class="contact-text">
+								<h2><span>&lt;h3&gt;</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;我是郭佳惠，<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;一個熱愛程式的女孩。<br>
+									<span>&lt;/h3&gt;</span>
+								</h2>
+								<p>
+									<img src="pic/nav-icon/nav-contact.png" alt="" height="25px;"><span>rita860620@gmail.com</span>
+								</p>
+							</div>
+							<div class="contact-img">
+								<img src="pic/me-2.jpg" alt="" width="374px">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+
+		</script>
+	</body>
+
 </html>
