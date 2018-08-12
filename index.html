@@ -9,16 +9,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script>
 
-$(document).ready(function () {
-	
-	$("#loading").ajaxStart(function(){
-		$(this).show();
-	});
-	$("#loading").ajaxStop(function(){
-		$(this).hide();
-	});
-})
-
 
 //打字效果
 var count=0;
@@ -143,12 +133,33 @@ $(window).scroll(function(){
 				color: #e4e2e2;
 				background-color: #0a0c0f;
 			}
+/*
 			.loading{
 				width: 100%;
 				height: 100vh;
 				background-color: #0a0c0f;
 				position: fixed;
 				z-index: 101;
+				-webkit-animation: loadd 2s ;
+				-moz-animation: loadd 2s ;
+				animation: loadd 2s ; 
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+			}
+			@keyframes loadd{
+				0% {opacity: 1;}
+				95%{opacity: 1;}
+				100% {z-index: -1;}
+			}
+			@-webkit-keyframes loadd{
+				0% {opacity: 1;}
+				95%{opacity: 1;}
+				100% {z-index: -1;}
+			}
+			@-moz-keyframes loadd{
+				0% {opacity: 1;}
+				95%{opacity: 1;}
+				100% {z-index: -1;}
 			}
 			.loading h2{
 				position: absolute;
@@ -156,6 +167,7 @@ $(window).scroll(function(){
 				left: 50%;
 				transform: translate(-50%,-50%);
 			}
+*/
 			.nav img{
 				opacity: 0.25;
 				vertical-align: middle;
@@ -503,9 +515,12 @@ $(window).scroll(function(){
 
 	<body onload="type_write(),type_write2()">
 		<div class="full" id="full" >
+<!--
 			<div class="loading" id="loading">
 				<h2 id="banner-title"><span>&lt;title&gt;</span>Chia_Kuo<span>&lt;/title&gt;</span></h2>
-			</div>
+			</div> 
+			
+-->
 			<div class="banner" >
 				<div class="banner-block" id="home">
 					<div class="banner-text">
