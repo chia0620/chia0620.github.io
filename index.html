@@ -68,6 +68,7 @@ $(window).scroll(function(){
 	if($(window).scrollTop()>1200 && $(window).scrollTop()<2500){
 		$("#nav-experience").removeClass("nav-hover");
 		$("#nav-experience").addClass("nav-hover-hover");
+		$("#banner-block").css("opacity",1);
 	}else{
 		$("#nav-experience").removeClass("nav-hover-hover");
 		$("#nav-experience").addClass("nav-hover");
@@ -76,6 +77,8 @@ $(window).scroll(function(){
 	if($(window).scrollTop()>2500 && $(window).scrollTop()<3750){
 		$("#nav-portfolio").removeClass("nav-hover");
 		$("#nav-portfolio").addClass("nav-hover-hover");
+				$("#banner-block").css("opacity",0);
+
 	}else{
 		$("#nav-portfolio").removeClass("nav-hover-hover");
 		$("#nav-portfolio").addClass("nav-hover");
