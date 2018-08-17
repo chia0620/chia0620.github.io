@@ -1,0 +1,404 @@
+/*
+<span>&lt;title&gt;</span>
+black
+#1d252c
+blue
+#33ced8
+white
+#e4e2e2;
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+* {
+position: relative;
+text-decoration: none;
+}
+a{
+color: #e4e2e2;
+}
+html,
+body,
+.full {
+width: 100%;
+font-family: 'Source Code Pro', '微軟正黑體';
+color: #e4e2e2;
+background-color: #0a0c0f;
+}
+/*
+.loading{
+width: 100%;
+height: 100vh;
+background-color: #0a0c0f;
+position: fixed;
+z-index: 101;
+-webkit-animation: loadd 2s ;
+-moz-animation: loadd 2s ;
+animation: loadd 2s ; 
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+@keyframes loadd{
+0% {opacity: 1;}
+95%{opacity: 1;}
+100% {z-index: -1;}
+}
+@-webkit-keyframes loadd{
+0% {opacity: 1;}
+95%{opacity: 1;}
+100% {z-index: -1;}
+}
+@-moz-keyframes loadd{
+0% {opacity: 1;}
+95%{opacity: 1;}
+100% {z-index: -1;}
+}
+.loading h2{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+*/
+.nav img{
+opacity: 0.25;
+vertical-align: middle;
+margin-right: 5px;
+margin-top: 7px;
+margin-bottom: 7px;
+transition: 0.2s;
+
+}
+.nav{
+font-size: 12px;
+position: fixed;
+top: 50%;
+left: 25px;
+transform: translateY(-50%);
+z-index: 99;
+}
+#nav{
+opacity: 0;
+transition: .3s;
+}
+.nav a{
+color: #e4e2e2;
+}
+.nav span{
+opacity: 0;
+transition: 0.2s;
+color: #e4e2e2;
+}
+
+.nav-hover img{
+opacity:0.25;
+}
+.nav-hover span{
+opacity:0;
+}
+.nav-hover:hover img, .nav-hover:hover span{
+opacity: 0.8;
+}
+.nav-hover-hover img{
+opacity:0.8;
+}
+.nav-hover-hover span{
+opacity:0.8;
+}
+.banner {
+height: 700px;
+width: 100%;
+background-image: url(pic/banner-bg.png);
+background-position: 85%;
+position: fixed;
+top: 0;
+z-index: 1;
+}
+.fiction-box{
+position: relative;
+background-color: #0a0c0f;
+top: 700px;
+z-index: 2;
+height: 3700px;
+}
+.banner-block {
+width: 418px;
+height: 445px;
+opacity: 0.75;
+border-radius: 10px;
+background-color: #1d252c;
+position: absolute;
+top: 100px;
+right: 8%;
+}
+.banner-text{
+margin-top: 64px;
+margin-left: 45px;
+}
+#banner-title::after,#banner-text::after{ 
+content: "|";
+margin-left: 5px;
+display: inline-block;
+opacity: 1;
+-webkit-animation: blink 1s infinite;
+-moz-animation: blink 1s infinite;
+animation: blink 1s infinite; 
+}
+@-webkit-keyframes blink {
+0% { opacity: 1; } 
+50% { opacity: 0; } 
+100% { opacity: 1; } 
+} 
+@-moz-keyframes blink {
+0% { opacity: 1; } 
+50% { opacity: 0; } 
+100% { opacity: 1; }
+} 
+@keyframes blink { 
+0% { opacity: 1; } 
+50% { opacity: 0; } 
+100% { opacity: 1; } 
+}		
+
+.banner-text-down{
+padding-top: 60px;
+line-height: 60px;
+}
+.banner-text-down span{
+line-height: 32px;
+}
+h2 {
+font-size: 26px;
+
+}
+span{
+color: #33ced8;
+}
+h2 span{
+font-size: 18px;
+}
+.about{
+height: 660px;
+width: 100%;
+}
+p{
+font-size: 16px;
+line-height: 24px;
+}
+p span{
+font-size: 12px;
+}
+.about p{
+left: 0;
+}
+.about img{
+position: absolute;
+right: 0;
+top: 0;
+}
+.about-content{
+width: 800px;
+height: 515px;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+.skill-block{
+width: 10px;
+height: 18px;
+display: inline-block;
+vertical-align: middle;
+margin-left: 4px;
+background-color: #e4e2e2;
+opacity: .25;
+border-radius: 1px;
+}
+.skill{
+top: 71px;
+}
+.skill-block-ul{
+text-align: right;
+}
+.skill-table{
+font-size: 20px;
+line-height: 13.5px;
+color: #33ced8;
+}
+.exp{
+height:1130px;
+margin-top: 100px;
+margin-bottom: 100px;
+width: 100%;
+overflow: hidden;
+}
+.exp-line{
+background: #0a0c0f linear-gradient(0deg, #e4e2e2, #e4e2e2) 50% 50% no-repeat;
+background-size: 1px 100%;
+}
+.exp-icon{
+left: 50%;
+transform: translateX(-35px);
+}
+.icon-bg{
+width: 70px;
+height: 70px;
+background-color: #1d252c;
+border-radius: 100%;
+top: 90px;
+margin-bottom: 90px;
+transition: .3s;
+}
+.icon-img{
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+z-index: 5;
+transition: .3s;
+}
+.icon-img-hover{
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+z-index: 4;
+position: absolute;
+
+}
+.exp-icon .icon-bg:hover{
+background-color: #e4e2e2;
+}
+.exp-icon .icon-bg:hover .icon-img{
+opacity: 0;
+}
+h4{
+color: #f2d852;
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 15px;
+}
+.left-exp-content{
+width: 45%;
+text-align: right;
+line-height: 22px;
+position: absolute;
+top: 115px;
+}
+.right-exp-content{
+text-align: left;
+right: 0;
+top: 273px;
+}
+.exp-item{
+margin-bottom: 188px;
+opacity: 0;
+transition: 1s;
+}
+.port{
+width: 80%;
+position: absolute;
+right: 8%;
+}
+.left-port-content{
+position: absolute;
+width: 450px;
+left: 0;
+}
+.right-port-content{
+right: 0;
+left: auto;
+}
+.album{
+text-align: center;
+position: relative;
+margin-top: 50px;
+overflow: hidden;
+}
+.album:hover .album-black{
+opacity: .9;
+transition: .3s;
+}
+.album:hover .album-text{
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+transition: .4s;
+transition-delay: .1s;
+}
+.album-img{
+width: 450px;
+height: 300px;
+position: relative;
+z-index: 3;
+overflow: hidden;
+}
+.album-black{
+width: 450px;
+height: 300px;
+position: absolute;
+z-index: 4;
+background-color: #1d252c;
+opacity: 0;
+top: -300px;
+transition: all .5s ease-in-out;
+transition-delay: .1s;
+}
+.album-text{
+top: 100%;
+left: 50%;
+transform: translate(-50%,0);
+transition: .4s;
+transition-delay: 0s;
+}
+.album-title{
+margin-bottom:  36px;
+}
+.album-word{
+line-height: 30px;
+}
+.album-text span{
+color: #d1548c;
+}
+.contact{
+position: relative;
+margin-top: 1300px;
+width: 100%;
+}
+.contact-bg{
+width: 80%;
+height: 480px;
+background-color: #1d252c;
+position: absolute;
+right: 8%;
+border-radius: 10px;
+margin-bottom: 50px;
+}
+.contact-content{
+position: absolute;
+width: 800px;
+height: 374px;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+.contact-text{
+line-height: 48px;
+}
+
+.contact-text p{
+position: absolute;
+top: 374px;
+transform: translateY(-100%);
+
+}
+.contact-text p span{
+font-family: '微軟正黑體';
+vertical-align: top;
+font-size: 18px;
+color: #e4e2e2;
+padding-left: 5px;
+letter-spacing: 0.5px;
+}
+.contact-img{
+position: absolute;
+right: 0px;
+top: 0px;
+}
