@@ -14,10 +14,10 @@
 		<meta charset="UTF-8">
 		<title>Chia_Kuo</title>
 		<link rel="shortcut icon" type="image/png" href="pic/favicon.ico"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="reset.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="style.css">
-		<script src="fiction.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script>
 
 
@@ -50,6 +50,14 @@ $(window).scroll(function(){
 		$("#nav").css("opacity",0);
 	}
 
+	//banner出現/消失
+	if($(window).scrollTop()>900){
+		$("#home").css("opacity",0);
+		$(".banner").css("background-image","url()");
+	}else{
+		$("#home").css("opacity",1);
+		$(".banner").css("background-image","url(pic/banner-bg.png)");
+	}
 
 	//	nav 每個位置不同
 	if($(window).scrollTop()>550 && $(window).scrollTop()<1200){
@@ -131,44 +139,54 @@ $(window).scroll(function(){
 </div> 
 
 -->
-			<div class="banner" >
-				<div class="banner-block" id="home">
-					<div class="banner-text">
-						<h2 id="banner-title"><span>&lt;title&gt;</span>Chia_Kuo<span>&lt;/title&gt;</span></h2>
-						<h2 class="banner-text-down" id="banner-text"><span>&lt;p&gt;</span><br>&nbsp;&nbsp; I love the moment,<br>&nbsp;&nbsp; when I am coding.<br>
-							<span>&lt;/p&gt;</span></h2>
+			<div class="banner " >
+				<div class="container">
+					<div class="row">
+						<div class="banner-block col-sm-5 offset-sm-7" id="home">
+							<div class="banner-text">
+								<h2 id="banner-title"><span>&lt;title&gt;</span>Chia_Kuo<span>&lt;/title&gt;</span></h2>
+								<h2 class="banner-text-down" id="banner-text"><span>&lt;p&gt;</span><br>&nbsp;&nbsp; I love the moment,<br>&nbsp;&nbsp; when I am coding.<br>
+									<span>&lt;/p&gt;</span></h2>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="fiction-box">
 				<div class="nav" id="nav">
 					<ul>
-						<li><a href="#full" id="nav-home"><img  src="pic/nav-icon/nav-home.png" alt="" width="30px"><span >Home</span></a></li>
+						<li><a href="#full" class="nav-hover"id="nav-home"><img  src="pic/nav-icon/nav-home.png" alt="" width="30px"><span >Home</span></a></li>
 						<li ><a href="#about" id="nav-about"><img  src="pic/nav-icon/nav-about.png" alt="" width="30px"><span>About</span></a></li>
 						<li><a href="#experience" id="nav-experience"><img src="pic/nav-icon/nav-experience.png" alt="" width="30px"><span>Experience</span></a></li>
 						<li><a href="#portfolio" id="nav-portfolio"><img  src="pic/nav-icon/nav-portfolio.png" alt="" width="30px"><span>Portfolio</span></a></li>
 						<li><a href="#contact"  id="nav-contact"><img src="pic/nav-icon/nav-contact.png" alt="" width="30px"><span>Contact</span></a></li>
 					</ul>
 				</div>
-				<div class="about" id="about">
+				<div class="about container" id="about">
 					<div class="about-content">
-						<p><span>&lt;p&gt;</span><br>
-							&nbsp;&nbsp;&nbsp;我是郭佳惠，<br>
-							&nbsp;&nbsp;&nbsp;我喜歡敲打程式碼的感覺，<br>
-							&nbsp;&nbsp;&nbsp;程式雖然複雜卻也直白，<br>
-							&nbsp;&nbsp;&nbsp;擁有絕對的正確與錯誤，<br>
-							&nbsp;&nbsp;&nbsp;這樣的絕對讓我安心。<br>
-							&nbsp;&nbsp;&nbsp;<br>
-							&nbsp;&nbsp;&nbsp;在大學期間接觸網頁前端，<br>
-							&nbsp;&nbsp;&nbsp;對網頁的領域總有無限的好奇心，<br>
-							&nbsp;&nbsp;&nbsp;也享受著刻出一個網站的成就感。<br>
-							&nbsp;&nbsp;&nbsp;正為了成為一名前端工程師努力著，<br>
-							&nbsp;&nbsp;&nbsp;致力於讓使用者擁有最好的體驗。<br>
-							<span>&lt;/p&gt;</span>
-						</p>
-						<img src="pic/me.png" alt="" width="280px">
+						<div class="row">
+							<div class="col-sm-5 offset-sm-1">
+								<p><span>&lt;p&gt;</span><br>
+									&nbsp;&nbsp;&nbsp;我是郭佳惠，<br>
+									&nbsp;&nbsp;&nbsp;我喜歡敲打程式碼的感覺，<br>
+									&nbsp;&nbsp;&nbsp;程式雖然複雜卻也直白，<br>
+									&nbsp;&nbsp;&nbsp;擁有絕對的正確與錯誤，<br>
+									&nbsp;&nbsp;&nbsp;這樣的絕對讓我安心。<br>
+									&nbsp;&nbsp;&nbsp;<br>
+									&nbsp;&nbsp;&nbsp;在大學期間接觸網頁前端，<br>
+									&nbsp;&nbsp;&nbsp;對網頁的領域總有無限的好奇心，<br>
+									&nbsp;&nbsp;&nbsp;也享受著刻出一個網站的成就感。<br>
+									&nbsp;&nbsp;&nbsp;正為了成為一名前端工程師努力著，<br>
+									&nbsp;&nbsp;&nbsp;致力於讓使用者擁有最好的體驗。<br>
+									<span>&lt;/p&gt;</span>
+								</p>
+							</div>
+							<div class="col-sm-3 offset-sm-3">
+								<img src="pic/me.png" alt="" width="110%">
+							</div>
+						</div>
 						<div class="skill">
-							<table class="skill-table" width="800px" height="148px">
+							<table class="skill-table col-sm-11 offset-sm-1" width="100%" height="148px">
 								<tr>
 									<td>HTML</td>
 									<td>
@@ -262,7 +280,7 @@ $(window).scroll(function(){
 						</div>
 					</div>
 				</div>
-				<div class="exp exp-line" id="experience">
+				<div class="exp exp-line container" id="experience">
 					<ul class="exp-icon">
 						<li><div class="icon-bg">
 							<img class="icon-img" src="pic/exp-icon/exp-edu.png" alt="" width="40px">
@@ -283,7 +301,7 @@ $(window).scroll(function(){
 							<img class="icon-img"src="pic/exp-icon/exp-project.png" alt="" width="40px">
 							<img class="icon-img-hover" src="pic/exp-icon/exp-project-hover.png" alt="" width="40px"></div></li>
 					</ul>
-					<div class="left-exp-content">
+					<div class="left-exp-content col-sm-6">
 						<div class="exp-item" id="exp-item1">
 							<h4>淡江企業管理學系</h4>
 							<p>
@@ -311,7 +329,7 @@ $(window).scroll(function(){
 							</p>
 						</div>
 					</div>
-					<div class="left-exp-content right-exp-content">
+					<div class="left-exp-content right-exp-content col-sm-6">
 						<div class="exp-item" id="exp-item2">
 							<h4>企管系學會</h4>
 							<p>
@@ -338,164 +356,147 @@ $(window).scroll(function(){
 						</div>
 					</div>
 				</div>
-				<div class="port" id="portfolio">
-					<div class="left-port-content">
-						<div class="album">
-							<a href="https://pin.it/npeiup4c5tcgze" target="_blank">
-								<div class="album-img">
-									<img src="pic/port-img/port-ilan.png" alt="" width="450px">
-								</div>
-								<div class="album-black">
-									<div class="album-text">
-										<p class="album-title">
-											<span>&lt;h4&gt;</span>
-											版型設計-宜蘭
-											<span>&lt;/h4&gt;</span>
-										</p>
-										<p class="album-word">
-											<span>&lt;!--</span>蘭陽平原保留許多農田，人跟土地都讓人感到舒服<br>
-											，因此動念為這樣的宜蘭設計一款網站，內容包含宜蘭<br>
-											的美食、景點與交通方式，顏色則是用米色與褐色這種<br>
-											接近土地的顏色，希望網站能表現宜蘭純樸的感覺。<span>--&gt;</span>
-										</p>
+				<div class="port container" id="portfolio">
+					<div class="row">
+						<div class="left-port-content 	col-sm-5 offset-sm-1">
+							<div class="album">
+								<a href="https://pin.it/npeiup4c5tcgze" target="_blank">
+									<div class="album-img">
+										<img src="pic/port-img/port-ilan.png" alt="" width="100%">
 									</div>
-								</div>
-							</a>
-						</div>
-						<div class="album">
-							<a href="web/OnePage/chia.html"  target="_blank">
-								<div class="album-img">
-									<img src="pic/port-img/port-OnePage.jpg" alt="" width="450px">
-								</div>
-								<div class="album-black">
-									<div class="album-text">
-										<p class="album-title">
-											<span>&lt;h4&gt;</span>
-											網頁-個人網站
-											<span>&lt;/h4&gt;</span>
-										</p>
-										<p class="album-word">
-											<span>&lt;!--</span>剛入門學習網站時，一直很希望有一個可以放上自己<br>
-											作品以及介紹的個人網站，因此當有能力架出one page<br>
-											時，便馬上選定要以自己為主題。我非常喜歡黑灰色系，<br>
-											黑色總讓我覺得有種內斂的美，因此網站也以灰色作為<br>
-											主色系去延伸。<span>--&gt;</span>
-										</p>
+									<div class="album-black">
+										<div class="album-text">
+											<p class="album-title">
+												<span>&lt;h4&gt;</span>
+												版型設計-宜蘭
+												<span>&lt;/h4&gt;</span>
+											</p>
+											<p class="album-word">
+												<span>&lt;!--</span>蘭陽平原保留許多農田，人跟土地都讓人感到舒服，因此動念為這樣的宜蘭設計一款網站，內容包含宜蘭的美食、景點與交通方式，顏色則是用米色與褐色這種接近土地的顏色，希望網站能表現宜蘭純樸的感覺。<span>--&gt;</span>
+											</p>
+										</div>
 									</div>
-								</div>
-							</a>
-						</div>
-						<div class="album">
-							<a href="http://firehuman.idv.tw/" target="_blank">
-								<div class="album-img">
-									<img src="pic/port-img/port-firehuman.png" alt="" height="300px">
-								</div>
-								<div class="album-black">
-									<div class="album-text">
-										<p class="album-title">
-											<span>&lt;h4&gt;</span>
-											比賽網頁-我是消防員
-											<span>&lt;/h4&gt;</span>
-										</p>
-										<p class="album-word">
-											<span>&lt;!--</span>這個網頁我與另一個同學負責網站架設，這是第一次<br>
-											與夥伴分工去完成一個網站，不論是設計或是程式部分的<br>
-											溝通都讓我學到很多，這也是我第一次嘗試去做一個響應<br>
-											式網站，主題消防員是一個平常不會接觸到的職業，因此<br>
-											這次在蒐集素材的過程中也聽聞許多有趣的故事。<span>--&gt;</span>
-										</p>
+								</a>
+							</div>
+							<div class="album">
+								<a href="web/OnePage/chia.html"  target="_blank">
+									<div class="album-img">
+										<img src="pic/port-img/port-OnePage.jpg" alt="" width="100%">
 									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="left-port-content right-port-content">
-						<div class="album">
-							<a href="https://pin.it/ghsisxac3bbxkp"  target="_blank">
-								<div class="album-img">
-									<img src="pic/port-img/port-LanYang.png" alt="" width="450px">
-								</div>
-								<div class="album-black">
-									<div class="album-text">
-										<p class="album-title">
-											<span>&lt;h4&gt;</span>
-											版型設計-蘭陽女中
-											<span>&lt;/h4&gt;</span>
-										</p>
-										<p class="album-word">
-											<span>&lt;!--</span>剛學習網站時，跟高中老師分享了這個近況，老師便<br>
-											提出若有機會能幫忙把高中網站改版。便嘗試以高中母校<br>
-											網站的架構去設計，除了圓自己這個夢以外，也想嘗試資<br>
-											料量大時的版型設計，因此有了這個作品。<span>--&gt;</span>
-										</p>
+									<div class="album-black">
+										<div class="album-text">
+											<p class="album-title">
+												<span>&lt;h4&gt;</span>
+												網頁-個人網站
+												<span>&lt;/h4&gt;</span>
+											</p>
+											<p class="album-word">
+												<span>&lt;!--</span>剛入門學習網站時，一直很希望有一個可以放上自己作品以及介紹的個人網站，因此當有能力架出one page時，便馬上選定要以自己為主題。我非常喜歡黑灰色系，黑色總讓我覺得有種內斂的美，因此網站也以灰色作為
+												主色系去延伸。<span>--&gt;</span>
+											</p>
+										</div>
 									</div>
-								</div>
-							</a>
-						</div>
-						<div class="album">
-							<a href="web/GinG/0-index.html"  target="_blank">
-								<div class="album-img">
-									<img src="pic/port-img/port-GinG.png" alt="" width="450px">
-								</div>
-								<div class="album-black">
-									<div class="album-text">
-										<p class="album-title">
-											<span>&lt;h4&gt;</span>
-											網頁-金雞堂蔘藥行
-											<span>&lt;/h4&gt;</span>
-										</p>
-										<p class="album-word">
-											<span>&lt;!--</span>主題金雞堂蔘藥行是家裡自己的中藥行，近幾年品牌<br>
-											經營一直是很熱門的議題，因此長輩曾向我提出想這樣經營<br>
-											藥房的念頭，為了跳脫藥房枯燥老舊的形象，網站以較亮眼<br>
-											的顏色跟特效讓中藥行不再無趣，有許多朋友在看到網頁後<br>
-											給出肯定的評價。<span>--&gt;</span>
-										</p>
+								</a>
+							</div>
+							<div class="album">
+								<a href="http://firehuman.idv.tw/" target="_blank">
+									<div class="album-img">
+										<img src="pic/port-img/port-firehuman.png" alt="" height="100%">
 									</div>
-								</div>
-							</a>
-						</div>
-						<div class="album">
-							<a href="web/WebTeam/index.html"  target="_blank">
-								<div class="album-img">
-									<img src="pic/port-img/port-WebTeam.png" alt="" height="300px">
-								</div>
-								<div class="album-black">
-									<div class="album-text">
-										<p class="album-title">
-											<span>&lt;h4&gt;</span>
-											活動網頁-網站組
-											<span>&lt;/h4&gt;</span>
-										</p>
-										<p class="album-word">
-											<span>&lt;!--</span>媒體每年都會舉行成果展，讓學生可以展示自己所學，<br>
-											但因為大家的成果過於細碎，所以如何整合並展示便是個問<br>
-											題，我們想出的辦法是做一個網站組的首頁，讓觀展者可以<br>
-											透過簡單的介紹到自己有興趣的主題去看看，這也是設計跟<br>
-											架設分開的網站，內容用了簡單的文字框上滑特效。<span>--&gt;</span>
-										</p>
+									<div class="album-black">
+										<div class="album-text">
+											<p class="album-title">
+												<span>&lt;h4&gt;</span>
+												比賽網頁-我是消防員
+												<span>&lt;/h4&gt;</span>
+											</p>
+											<p class="album-word">
+												<span>&lt;!--</span>這個網頁我與另一個同學負責網站架設，這是第一次與夥伴分工去完成一個網站，不論是設計或是程式部分的溝通都讓我學到很多，這也是我第一次嘗試去做一個響應式網站，主題消防員是一個平常不會接觸到的職業，因此這次在蒐集素材的過程中也聽聞許多有趣的故事。<span>--&gt;</span>
+											</p>
+										</div>
 									</div>
-								</div>
-							</a>
+								</a>
+							</div>
 						</div>
+						<div class="right-port-content col-sm-5 offset-sm-1">
+							<div class="album">
+								<a href="https://pin.it/ghsisxac3bbxkp"  target="_blank">
+									<div class="album-img">
+										<img src="pic/port-img/port-LanYang.png" alt="" width="100%">
+									</div>
+									<div class="album-black">
+										<div class="album-text">
+											<p class="album-title">
+												<span>&lt;h4&gt;</span>
+												版型設計-蘭陽女中
+												<span>&lt;/h4&gt;</span>
+											</p>
+											<p class="album-word">
+												<span>&lt;!--</span>剛學習網站時，跟高中老師分享了這個近況，老師便提出若有機會能幫忙把高中網站改版。便嘗試以高中母校網站的架構去設計，除了圓自己這個夢以外，也想嘗試資料量大時的版型設計，因此有了這個作品。<span>--&gt;</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="album">
+								<a href="web/GinG/0-index.html"  target="_blank">
+									<div class="album-img">
+										<img src="pic/port-img/port-GinG.png" alt="" width="100%">
+									</div>
+									<div class="album-black">
+										<div class="album-text">
+											<p class="album-title">
+												<span>&lt;h4&gt;</span>
+												網頁-金雞堂蔘藥行
+												<span>&lt;/h4&gt;</span>
+											</p>
+											<p class="album-word">
+												<span>&lt;!--</span>主題金雞堂蔘藥行是家裡自己的中藥行，近幾年品牌經營一直是很熱門的議題，因此長輩曾向我提出想這樣經營藥房的念頭，為了跳脫藥房枯燥老舊的形象，網站以較亮眼的顏色跟特效讓中藥行不再無趣，有許多朋友在看到網頁後給出肯定的評價。<span>--&gt;</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="album">
+								<a href="web/WebTeam/index.html"  target="_blank">
+									<div class="album-img">
+										<img src="pic/port-img/port-WebTeam.png" alt="" height="100%">
+									</div>
+									<div class="album-black">
+										<div class="album-text">
+											<p class="album-title">
+												<span>&lt;h4&gt;</span>
+												活動網頁-網站組
+												<span>&lt;/h4&gt;</span>
+											</p>
+											<p class="album-word">
+												<span>&lt;!--</span>媒體每年都會舉行成果展，讓學生可以展示自己所學，但因為大家的成果過於細碎，所以如何整合並展示便是個問題，我們想出的辦法是做一個網站組的首頁，讓觀展者可以透過簡單的介紹到自己有興趣的主題去看看，這也是設計跟架設分開的網站，內容用了簡單的文字框上滑特效。<span>--&gt;</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</div>
 
+						</div>
 					</div>
 				</div>
-				<div class="contact" id="contact">
-					<div class="contact-bg">
-						<div class="contact-content">
-							<div class="contact-text">
-								<h2 id="contact-text"><span>&lt;h3&gt;</span><br>
-									&nbsp;&nbsp;&nbsp;&nbsp;我是郭佳惠，<br>
-									&nbsp;&nbsp;&nbsp;&nbsp;一個熱愛程式的女孩。<br>
-									<span>&lt;/h3&gt;</span>
-								</h2>
-								<p>
-									<img src="pic/nav-icon/nav-contact.png" alt="" height="25px;"><span>rita860620@gmail.com</span>
-								</p>
-							</div>
-							<div class="contact-img">
-								<img src="pic/me-2.jpg" alt="" width="374px">
+				<div class="contact container" id="contact">
+					<div class="row">
+						<div class="contact-bg col-sm-11 offset-sm-1">
+							<div class="contact-content row">
+								<div class="contact-text col-md-7">
+									<h2 id="contact-text"><span>&lt;h3&gt;</span><br>
+										&nbsp;&nbsp;&nbsp;&nbsp;我是郭佳惠，<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;一個熱愛程式的女孩。<br>
+										<span>&lt;/h3&gt;</span>
+									</h2>
+									<p>
+										<img src="pic/nav-icon/nav-contact.png" alt="" height="25px;"><span>rita860620@gmail.com</span>
+									</p>
+								</div>
+								<div class="contact-img col-sm-5">
+									<img src="pic/me-2.jpg" alt="" width="374px">
+								</div>
 							</div>
 						</div>
 					</div>
