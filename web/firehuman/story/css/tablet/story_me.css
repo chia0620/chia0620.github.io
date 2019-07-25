@@ -1,0 +1,240 @@
+@font-face {
+    font-family: lai;
+    src: url("../../setofont.ttf");
+  }
+
+@font-face {
+    font-family:script;
+    src: url("../../TanukiMagic.ttf");
+  }
+
+body,html{
+    font-family: "lai";
+    width: 100%;
+    height: 100%;
+    color: #5a5959;
+    overflow: hidden;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+header{
+    background-color: #f2f4d9;
+}
+
+.logo{
+    width: 180px;
+    height: 60px;
+    float: left;
+    margin: 5px 20px;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+header nav{
+    margin-left: 170px;
+
+}
+
+header nav li{
+    display: inline;
+    margin: 15px;
+    padding: 0px 0px;
+    line-height: 70px;
+}
+
+header nav li a{
+    color: #5a5959;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 20px;
+}
+
+header nav li a:hover{
+    color: white;
+    background: url("../../img/nav_pink.png");
+    background-size: 100% 100%;
+}
+
+.story_me{
+    background: url("../../img/story_me/bg.jpg");
+    background-size: 100vw 85vh;
+    background-repeat: no-repeat;
+    background-position-y: -90%;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+    justify-content: center;
+}
+
+.story_me .content{
+    display: inline-flex;
+    padding-top: 11%;
+    height: 50%;
+    font-family: lai;
+}
+
+.story_me .photo{
+    margin-left: 10%;
+    margin-top: 4%;
+    width: 55%;
+}
+
+.story_me .content img{
+    width: 80%;
+}
+
+.story_me .content h1{
+    color: white;
+    /* font-weight: bolder; */
+    font-size: 30px;
+    line-height: 70px;
+    background: url("../../img/story_me/line.png");
+    background-size: 50% 35%;
+    background-position-y: 100%;
+    background-repeat: no-repeat;
+    font-family: script;
+}
+
+.story_me .content p{
+    color: #ffffff;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.story_me article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10%;
+    width: 55%;
+}
+
+footer{
+    display: flex;
+    align-items:flex-end;
+    justify-content:flex-end;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+}
+
+footer nav{
+    width: 40%;
+    height: 15%;
+    display: flex;
+    padding-bottom: 15px;
+}
+
+footer nav li{
+    list-style-type:none;
+    margin: 0px 20px;
+    width: 70px;
+    height: 70px;
+}
+
+footer nav li:hover{
+    opacity: 0.5;
+}
+
+footer nav img{
+    width: 100%;
+    height: 100%;
+}
+
+footer .photo{
+    width: 90px;
+    height: 200px;
+    padding-right: 20px;
+}
+
+footer .photo img{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width:736px){
+    .logo{
+        width: 99px;
+        height: 33px;
+        float: left;
+        margin: 5px 25px;
+    }
+
+    header nav li{
+        display: inline;
+        margin: 15px 10px;
+        padding: 0px 0px;
+        line-height: 40px;
+    }
+    
+    header nav li a{
+        color: #5a5959;
+        text-decoration: none;
+        line-height: 30px;
+        font-size: 8px;    
+    }
+
+    .story_me .content{
+        display: inline-flex;
+        padding-top: 5%;
+        height: 50%;
+        font-family: lai;
+    }
+
+    .story_me article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 10%;
+        padding-top: 14%;
+        width: 55%;
+    }
+
+    .story_me .content h1{
+        color: white;
+        /* font-weight: bolder; */
+        font-size: 20px;
+        line-height: 46px;
+        background: url("../../img/story_me/line.png");
+        background-size: 50% 35%;
+        background-position-y: 105%;
+        background-repeat: no-repeat;
+        font-family: script;
+    }
+
+    .story_me .content p{
+        color: #ffffff;
+        line-height: 15px;
+        font-size: 10px;
+    }
+
+    footer nav{
+        width: 40%;
+        height: 15%;
+        display: flex;
+        padding-bottom: 5px;
+    }
+
+    footer nav li{
+        list-style-type:none;
+        margin: 0px 15px;
+        width: 35px;
+        height: 35px;
+    }
+
+    footer .photo{
+        width: 45px;
+        height: 90px;
+        padding-right: 20px;
+    }
+}

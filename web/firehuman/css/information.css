@@ -1,0 +1,264 @@
+@font-face {
+    font-family: "lai";
+    src: url("../story/setofont.ttf");
+}
+
+body,
+html {
+    font-family: "lai",'微軟正黑體';
+    width: 100%;
+    height: 100%;
+    color: #5a5959;
+    overflow: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+body .hide p{
+    display: none;
+}
+.wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    background-color: #f2f4d9;
+    position: relative;
+    z-index: 6;
+}
+
+.logo{
+    width: 180px;
+    height: 60px;
+    float: left;
+    margin: 5px 20px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    margin-left: 170px;
+
+}
+
+nav li {
+    display: inline;
+    margin: 15px;
+    line-height: 70px;
+}
+
+nav li a {
+    color: #5a5959;
+    text-decoration: none;
+    line-height: 70px;
+}
+
+nav li a:hover {
+    color: white;
+    background: url("../img/nav_pink.png");
+    background-size: 100% 100%;
+}
+
+
+.bg{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/information/bg.jpg);
+    background-position: 50% 50%;
+    background-size:150%;
+    background-repeat: no-repeat;
+}
+
+.talk-block{
+    position: absolute;
+    z-index: 2;
+    width:110%;
+    height:110%;
+    background-image: url(../img/information/talk-block.png);
+    background-position: 52% 15%;
+    background-size:48%;
+    background-repeat: no-repeat;
+
+    transform: rotate(13deg);
+    -ms-transform: rotate(13deg);             /* IE 9 */
+    -webkit-transform: rotate(13deg);      /* Safari and Chrome */
+    -o-transform: rotate(13deg);              /* Opera */
+    -moz-transform: rotate(13deg);         /* Firefox */
+}
+
+.bg p{
+    position: absolute;
+    z-index: 3;
+    top:17%;
+    left: 39%;
+    width: 39%;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.bg span{
+    font-weight: 600;
+}
+
+.light{
+    width: 30%;
+    height: 30%;
+    background-image: url(../img/information/light.png);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 5;
+    bottom: 1%;
+    left: -5%;
+}
+
+.light-line{
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    z-index: 5;
+    bottom: 0%;
+    left: 0%;
+
+}
+
+#line_1,#line_2,#line_3{
+    width:7%;
+    height:auto;
+    position: absolute;
+    z-index: 5;
+}
+
+#line_1{
+    margin-left: 20%;
+    margin-top: 15%;
+}
+#line_2{
+    margin-left: 26%;
+    margin-top: 25%;    
+    transform: rotate(15deg);
+    -ms-transform: rotate(15deg);             /* IE 9 */
+    -webkit-transform: rotate(15deg);      /* Safari and Chrome */
+    -o-transform: rotate(15deg);              /* Opera */
+    -moz-transform: rotate(15deg);         /* Firefox */
+}
+#line_3{
+    margin-left:30%;
+    margin-top: 35%;    
+    transform: rotate(30deg);
+    -ms-transform: rotate(30deg);             /* IE 9 */
+    -webkit-transform: rotate(30deg);      /* Safari and Chrome */
+    -o-transform: rotate(30deg);              /* Opera */
+    -moz-transform: rotate(30deg);         /* Firefox */
+}
+
+
+@media screen and (min-width: 736px) and (max-width: 1024px) {
+    nav li {
+        display: inline;
+        margin: 0px;
+        line-height: 70px;
+        font-size: 14px;
+    }
+    .bg p{
+        font-size: 13px;
+        line-height: 14px;
+        top:21%;
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 667px) and (max-width: 736px) {
+    nav li {
+        display: inline;
+        margin: 0px;
+        line-height: 70px;
+        font-size: 15px;
+    }
+    .bg p{
+        font-size: 12px;
+        line-height: 13px;
+        top:21%;
+    }
+    .talk-block{
+        position: absolute;
+        z-index: 2;
+        width:110%;
+        height:110%;
+        background-image: url(../img/information/talk-block.png);
+        background-position: 52% 15%;
+        background-size:53%;
+        background-repeat: no-repeat;
+
+        transform: rotate(13deg);
+        -ms-transform: rotate(13deg);             /* IE 9 */
+        -webkit-transform: rotate(13deg);      /* Safari and Chrome */
+        -o-transform: rotate(13deg);              /* Opera */
+        -moz-transform: rotate(13deg);         /* Firefox */
+    }
+}
+
+@media screen and (max-width: 667px) {
+    nav li {
+        display: inline;
+        margin: 0px;
+        line-height: 70px;
+        font-size: 15px;
+    }
+    .bg p{
+        font-size: 12px;
+        line-height: 13px;
+        top:21%;
+    }
+    .talk-block{
+        position: absolute;
+        z-index: 2;
+        width:110%;
+        height:110%;
+        background-image: url(../img/information/talk-block.png);
+        background-position: 52% 15%;
+        background-size:53%;
+        background-repeat: no-repeat;
+
+        transform: rotate(13deg);
+        -ms-transform: rotate(13deg);             /* IE 9 */
+        -webkit-transform: rotate(13deg);      /* Safari and Chrome */
+        -o-transform: rotate(13deg);              /* Opera */
+        -moz-transform: rotate(13deg);         /* Firefox */
+    }
+}
+
+@media screen and (orientation:portrait) {
+    body .wrap{
+        display: none;
+    }
+
+    body{
+        background: #f2f4d9;
+    }
+
+    .hide{
+        top: 45%;
+        margin: 0 auto;
+        position: absolute;
+        width: 100vw;
+    }
+
+    body .hide p{
+        display: block;
+        color: #5a5959;
+        font-size: 26px;
+        text-align: center;
+    }
+}
