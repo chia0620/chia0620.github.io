@@ -102,23 +102,26 @@ $(window).scroll(function(){
 		$("#nav-contact").addClass("nav-hover");
 	}
 
-	if($(window).scrollTop()>1100){
-		$("#exp-item1").css("opacity",1);
+	if($(window).scrollTop()>1060){
+		$("#exp-item0").css("opacity",1);
 	}
-	if($(window).scrollTop()>1260){
+	if($(window).scrollTop()>1100){
 		$("#exp-item2").css("opacity",1);
 	}
-	if($(window).scrollTop()>1476){
-		$("#exp-item3").css("opacity",1);
+	if($(window).scrollTop()>1260){
+		$("#exp-item1").css("opacity",1);
 	}
-	if($(window).scrollTop()>1564){
+	if($(window).scrollTop()>1476){
 		$("#exp-item4").css("opacity",1);
 	}
+	if($(window).scrollTop()>1564){
+		$("#exp-item3").css("opacity",1);
+	}
 	if($(window).scrollTop()>1702){
-		$("#exp-item5").css("opacity",1);
+		$("#exp-item6").css("opacity",1);
 	}
 	if($(window).scrollTop()>1840){
-		$("#exp-item6").css("opacity",1);
+		$("#exp-item5").css("opacity",1);
 	}
 })
 		</script>
@@ -187,25 +190,26 @@ $(window).scroll(function(){
 						</div>
 						<div class="skill">
 							<table class="skill-table col-sm-11 offset-sm-1" width="100%" height="148px">
+								
 								<tr>
-									<td>HTML</td>
+									<td>Vue.js 2</td>
 									<td>
 										<ul class="skill-block-ul">
 											<li class="skill-block active"></li
 												><li class="skill-block active"></li
 											><li class="skill-block active"></li
 											><li class="skill-block active"></li
-											><li class="skill-block active"></li
+											><li class="skill-block"></li
 											><li class="skill-block"></li>
 										</ul>
 									</td>
 									<td width="200px"></td>
-									<td>Bootstrap</td>
+									<td>Sass</td>
 									<td>
 										<ul class="skill-block-ul">
 											<li class="skill-block active"></li
 												><li class="skill-block active"></li
-											><li class="skill-block"></li
+											><li class="skill-block active"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li>
@@ -213,7 +217,7 @@ $(window).scroll(function(){
 									</td>
 								</tr>
 								<tr>
-									<td>Jade / Pug</td>
+									<td>JavaScript</td>
 									<td>
 										<ul class="skill-block-ul">
 											<li class="skill-block active"></li
@@ -225,20 +229,20 @@ $(window).scroll(function(){
 										</ul>
 									</td>
 									<td width="200px"></td>
-									<td>C</td>
+									<td>Bootstrap 4</td>
 									<td>
 										<ul class="skill-block-ul">
 											<li class="skill-block active"></li
 												><li class="skill-block active"></li
 											><li class="skill-block active"></li
-											><li class="skill-block"></li
-											><li class="skill-block"></li
+											><li class="skill-block active"></li
+											><li class="skill-block active"></li
 											><li class="skill-block"></li>
 										</ul>
 									</td>
 								</tr>
 								<tr>
-									<td>CSS / Sass</td>
+									<td>HTML</td>
 									<td>
 										<ul class="skill-block-ul">
 											<li class="skill-block active"></li
@@ -263,18 +267,29 @@ $(window).scroll(function(){
 									</td>
 								</tr>
 								<tr>
-									<td>Javascript</td>
+									<td>CSS</td>
 									<td>
 										<ul class="skill-block-ul">
 											<li class="skill-block active"></li
 												><li class="skill-block active"></li
 											><li class="skill-block active"></li
 											><li class="skill-block active"></li
+											><li class="skill-block active"></li
+											><li class="skill-block"></li>
+										</ul>
+									</td>
+									<td width="200px"></td>
+									<td>C</td>
+									<td>
+										<ul class="skill-block-ul">
+											<li class="skill-block active"></li
+												><li class="skill-block"></li
+											><li class="skill-block"></li
+											><li class="skill-block"></li
 											><li class="skill-block"></li
 											><li class="skill-block"></li>
 										</ul>
 									</td>
-
 								</tr>
 							</table>
 						</div>
@@ -282,6 +297,9 @@ $(window).scroll(function(){
 				</div>
 				<div class="exp exp-line container" id="experience">
 					<ul class="exp-icon">
+						<li><div class="icon-bg">
+							<img class="icon-img"src="pic/exp-icon/exp-pc.png" alt="" width="40px">
+							<img class="icon-img-hover" src="pic/exp-icon/exp-pc-hover.png" alt="" width="40px"></div></li>
 						<li><div class="icon-bg">
 							<img class="icon-img" src="pic/exp-icon/exp-edu.png" alt="" width="40px">
 							<img class="icon-img-hover" src="pic/exp-icon/exp-edu-hover.png" alt="" width="40px"></div></li>
@@ -302,6 +320,14 @@ $(window).scroll(function(){
 							<img class="icon-img-hover" src="pic/exp-icon/exp-project-hover.png" alt="" width="40px"></div></li>
 					</ul>
 					<div class="left-exp-content col-sm-6">
+						<div class="exp-item" id="exp-item0">
+							<h4>合邦商網股份有限公司</h4>
+							<p>
+								主要負責維運電商網站、內部表單系統、舊有網站平台，<br>
+								參與開發新官網改版頁面，獨立開發多張新表單與功能，<br>
+								內部以 git 進行版本控制，在專案中精進 Vue.js<br><br>
+							</p>
+						</div>
 						<div class="exp-item" id="exp-item1">
 							<h4>淡江企業管理學系</h4>
 							<p>
@@ -324,7 +350,6 @@ $(window).scroll(function(){
 							<p>
 								與另一位同學共同擔任網站部分，<br>
 								第一次參與網站跟設計分開的專案，<br>
-								也是初次嘗試RWD式的設計，<br>
 								比賽過程中與同學溝通是很難得的經驗。<br>
 							</p>
 						</div>
@@ -351,7 +376,7 @@ $(window).scroll(function(){
 							<p>
 								與指導老師溝通後選擇Wix架設宣傳網站，<br>
 								從素材整理、版面設計、網站架設等<br>
-								皆為獨立完成，至今仍在維護更新中。<br><br>
+								皆為獨立完成。<br><br>
 							</p>
 						</div>
 					</div>
@@ -359,6 +384,25 @@ $(window).scroll(function(){
 				<div class="port container" id="portfolio">
 					<div class="row">
 						<div class="left-port-content 	col-sm-5 offset-sm-1">
+							<div class="album">
+								<a href="https://atenore.com/index" target="_blank">
+									<div class="album-img">
+										<img src="pic/port-img/port-atenore.png" alt="" width="100%">
+									</div>
+									<div class="album-black">
+										<div class="album-text">
+											<p class="album-title">
+												<span>&lt;h4&gt;</span>
+												切版、API串接-地圖網
+												<span>&lt;/h4&gt;</span>
+											</p>
+											<p class="album-word">
+												<span>&lt;!--</span>在 JAVA 架構內獨立負責前端部分，專案內以Bootstrap 作為視覺框架，利用 Vue.js 渲染畫面，Axios 串接API。初次使用 Google Map API 定位使用者位置、重新調整地標 icon 與地標資訊方塊樣式。遇到google 地圖在 Vue.js 中無法正確渲染的情況，解決過程中對 Vue.js 生命週期間有了更深的認識。<span>--&gt;</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</div>
 							<div class="album">
 								<a href="pic/port-img/port-ilan.png" target="_blank">
 									<div class="album-img">
