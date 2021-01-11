@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Css Egg Challenge</title>
+    <style>
+        body,
+        html {
+            background-color: #9ab8da;
+            user-select: none;
+            font-family: monospace;
+        }
+
+        .egg {
+            width: 280px;
+            height: 350px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            bottom: 0;
+            margin: auto;
+            background-color: #9fbad8;
+            border-radius: 50% / 55% 55% 45% 45%;
+            box-shadow:
+                /* 外框白 */
+                0px 0px 30px -10px #b1cbe4 inset,
+                /* 右上邊緣白 */
+                -20px 30px 30px -20px #b1cbe4 inset,
+                /* 左下淺灰 */
+                15px -30px 10px 0px #7d94b1 inset,
+                /* 左下黑 */
+                50px -70px 80px -10px #778ba9 inset,
+                /* 右上大白 */
+                -30px 40px 50px 0px #b4cbe3 inset,
+                /* 右下外框白 */
+                15px 6px 20px -20px #9fbad8;
+        }
+
+        /* 光點 */
+        .egg::before {
+            content: "";
+            width: 100px;
+            height: 150px;
+            position: absolute;
+            right: 40px;
+            top: 35px;
+            background-color: #b6cee6;
+            border-radius: 50%;
+            transform: rotate(-30deg);
+            filter: blur(20px);
+        }
+
+        /* 陰影 */
+        .egg::after {
+            content: "";
+            width: 120px;
+            height: 80px;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            border-radius: 50%;
+            transform: rotate(-20deg);
+            box-shadow: -80px 95px 50px 60px #657a95;
+        }
+
+        .title {
+            color: #b6cee6;
+            text-align: right;
+            position: absolute;
+            top: 50%;
+            left: calc(55% - 280px);
+            transform: translate(-50%, -50%);
+        }
+
+        .title h1 {
+            font-size: 48px;
+            line-height: 68px;
+            margin-bottom: 5px;
+        }
+
+        .title span {
+            font-size: 20px;
+            color: #657a95;
+        }
+
+        a {
+            color: #b6cee6;
+            text-decoration: none;
+            font-size: 16px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .egg {
+                left: 0;
+                right: 0;
+                bottom: 15%;
+            }
+
+            .title {
+                top: 80%;
+                left: 50%;
+                text-align: center;
+            }
+
+            a {
+                left: 0;
+                right: 0;
+                margin: auto;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="egg"></div>
+    <div class="title">
+        <h1>Pure Css<br>Challenge</h1>
+        <span>2020.03.24 chia</span>
+    </div>
+    <a href="https://unsplash.com/photos/TDENPSqM-b8" target="_blank">ref: Alexander Andrews</a>
+</body>
+
+</html>
